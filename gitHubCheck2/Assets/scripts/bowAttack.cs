@@ -9,14 +9,18 @@ public class bowAttack : MonoBehaviour
 
     public PlayerMovement playerMovement;
 
-    private float shootingTimer;
+    public float shootingTimer;
     public float resetShootingTimer;
   
     public float launchForce;
     public float maxLauncForce;
+    private float timer;
+    public float timerReset;
 
     public bool isShooting;
     public bool isMaxForce;
+    public bool canPlayStrech = false;
+
 
     // Update is called once per frame
     private void Start()
@@ -24,13 +28,22 @@ public class bowAttack : MonoBehaviour
         launchForce = 10f;
         shootingTimer = 0f;
         isShooting = false;
+        timer = timerReset;
     }
     void Update()
     {
+        timer -= Time.deltaTime;
+        if (((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f)) && (launchForce < maxLauncForce)) 
+        { 
+        StartCoroutine(BowStrechSfx());
+     
+        }
+   
         shootingTimer -= Time.deltaTime;
 
         if ((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f))
         {
+           
             isShooting = true;
             if (launchForce < maxLauncForce)
             {
@@ -58,7 +71,8 @@ public class bowAttack : MonoBehaviour
             isShooting = false;
         }
 
-        
+     
+
 
     }
 
@@ -82,7 +96,15 @@ public class bowAttack : MonoBehaviour
             scale.x = -1;
             newArrow.transform.localScale = scale;
         }
+
+        
     }
 
+    public IEnumerator BowStrechSfx()
+    {
+            canPlayStrech = true;
+            yield return new WaitForSeconds(0.01f);
+            canPlayStrech = false;
+    }
 
 }

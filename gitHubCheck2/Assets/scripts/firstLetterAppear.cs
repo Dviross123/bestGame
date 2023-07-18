@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class firstLetterAppear : MonoBehaviour
 {
     public GameObject canvas;
+    public bool inTrigger;
+
+    public float destroyTimer;
 
     private void Start()
     {
@@ -14,9 +17,21 @@ public class firstLetterAppear : MonoBehaviour
 
     private void Update()
     {
+        if (inTrigger) 
+        {
+            destroyTimer -= Time.deltaTime;
+            
+        }
+
+        if(destroyTimer <= 0f) 
+        {
+            InTriggerFalse();
+        }
+
+
         if (Input.GetKey(KeyCode.Escape))
         {
-            canvas.SetActive(false);
+            InTriggerFalse();
         }
     }
 
@@ -24,14 +39,24 @@ public class firstLetterAppear : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            inTrigger = true;
             canvas.SetActive(true);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    public void InTriggerFalse() 
     {
-        if (collision.CompareTag("Player"))
-        {
-            canvas.SetActive(false);
-        }
+        canvas.SetActive(false);
+        Destroy(gameObject);
+        inTrigger = false;
     }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player"))
+    //    {
+    //        canvas.SetActive(false);
+    //        Destroy(gameObject);
+    //        inTrigger = false;
+    //    }
+    //}
 }
