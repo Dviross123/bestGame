@@ -14,6 +14,11 @@ public class playerManager: MonoBehaviour
     //rb
     [SerializeField] public Rigidbody2D rb;
 
+    //boxCollider2D
+    public BoxCollider2D normalBC;
+    public BoxCollider2D slideBC;
+
+
     //scripts
     public PlayerMovement PlayerMovement;
     public bowAttack bowAttack;
@@ -48,13 +53,14 @@ public class playerManager: MonoBehaviour
     public float jumpTimeReset;
     public float smallBoostPower;
 
-
+    //int
     public int respawn;
 
 
 
     private void Start()
     {
+        slideBC.enabled = false;
         tpTimer = tpTimerReset;
         health = resetHealth;
         jumpTime = jumpTimeReset;
@@ -110,8 +116,9 @@ public class playerManager: MonoBehaviour
         }
 
         //fall
-        if (rb.velocity.y < 0 && !PlayerMovement.IsGrounded() && !PlayerMovement.IsWalled() && !PlayerMovement.isJumping)
+        if (rb.velocity.y < 0 && !PlayerMovement.IsGrounded() && !PlayerMovement.isWallSliding && !PlayerMovement.isJumping)
         {
+            
             animator.SetBool("isFalling", true);
         }
         else 
@@ -121,10 +128,14 @@ public class playerManager: MonoBehaviour
         //slide
         if (PlayerMovement.IsSliding && PlayerMovement.IsGrounded())
         {
+            slideBC.enabled = true;
+            normalBC.enabled = false;
             animator.SetBool("isSliding", true);
         }
         else 
         {
+            slideBC.enabled = false;
+            normalBC.enabled = true;
             animator.SetBool("isSliding", false);
         }
 
@@ -172,7 +183,7 @@ public class playerManager: MonoBehaviour
         }
 
 
-        if (transform.localPosition.y <= -50)
+        if (transform.localPosition.y <= -90)
         {
             SceneManager.LoadScene(respawn);
         }

@@ -108,11 +108,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-        //if you let go of jump while jumping stop the jump early
-        //if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f && !isDashing)
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, -1f);
-        //}
+        
         //checks when you can dash
         if (Input.GetButtonDown("Fire3") && canDash && gravityReturned && !isFastFalling&& dashCounter>0f)
         {
