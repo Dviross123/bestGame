@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 9a99148f86777cf43b99522cd5830061
+=======
+guid: 41935969bed763c47a466684ba8a2eb4
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +37,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< Updated upstream
     filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> Stashed changes
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +55,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   spritePixelsToUnits: 4
+=======
+  spritePixelsToUnits: 3
+>>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +82,11 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< Updated upstream
     textureCompression: 0
+=======
+    textureCompression: 1
+>>>>>>> Stashed changes
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +117,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -113,6 +130,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,8 +150,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: a31d0af278763064a82bccd2b56eef63
       internalID: -474659996
+=======
+      spriteID: 3e7773838bdda604099ca591f49abd05
+      internalID: 1189246600
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -152,8 +176,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 4f1502b7bdf674d4da0dd56b1de4d196
       internalID: 460000215
+=======
+      spriteID: ea0921decd24fc94c89f73f51f4e81ca
+      internalID: 1283018823
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -166,15 +195,25 @@ TextureImporter:
         y: 91
         width: 11
         height: 5
+<<<<<<< Updated upstream
       alignment: 4
       pivot: {x: 0, y: 0.5}
+=======
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 2fed29a77ccb90f4c8ee6af08fd6c54f
       internalID: -1491942503
+=======
+      spriteID: a6e491bfd96d54b44aebdec0903de70d
+      internalID: -661782174
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -194,8 +233,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 0e2fe4c67f8daab47baef76d229e52e5
       internalID: -1798279218
+=======
+      spriteID: c33c4e6306951e64c8dcd42b93c4a5ba
+      internalID: -2009812727
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -204,9 +248,15 @@ TextureImporter:
       name: lightning_4
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 40
         y: 52
         width: 16
+=======
+        x: 39
+        y: 52
+        width: 17
+>>>>>>> Stashed changes
         height: 12
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -215,8 +265,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: ee4976f7ba1ed424c9012cd5117f2f8c
       internalID: -26360752
+=======
+      spriteID: 6ba84008c64c93545ba4a64a23773d55
+      internalID: 1680210081
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -236,8 +291,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: b68f1f7accc7a55419d284a1b9699fb1
       internalID: 62666565
+=======
+      spriteID: f3057f54179b8f14b9fcc811cb2ab444
+      internalID: 1477796209
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -257,8 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: bc58879f79b0d5542ada35acf69e4725
       internalID: 1246464637
+=======
+      spriteID: be3c5e71131def5488752f9c5c24780f
+      internalID: 1655768627
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -274,6 +339,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       lightning_0: -474659996
       lightning_1: 460000215
       lightning_2: -1491942503
@@ -281,6 +347,15 @@ TextureImporter:
       lightning_4: -26360752
       lightning_5: 62666565
       lightning_6: 1246464637
+=======
+      lightning_0: 57221758
+      lightning_1: -1201688081
+      lightning_2: -397528091
+      lightning_3: 1927515617
+      lightning_4: -1292781938
+      lightning_5: 1406995468
+      lightning_6: 28019630
+>>>>>>> Stashed changes
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

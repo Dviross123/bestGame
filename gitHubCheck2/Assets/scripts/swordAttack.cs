@@ -20,18 +20,25 @@ public class swordAttack : MonoBehaviour
     private float resetAttackTime = 1.25f;
     public PlayerMovement player;
     private GameObject camera;
+    private GameObject lightning;
     private Animator shakeAnimator;
+<<<<<<< Updated upstream
     public Animator lightAnimator;
     public Animator exposureAnimator;
     public GameObject lightningExp;
 
+=======
+    private Animator lightningAnimator;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
         //lightningExp.SetActive(false);
         attackNum = 0;
         camera = GameObject.Find("MainCamera");
+        lightning = GameObject.Find("lightning");
         shakeAnimator = camera.GetComponent<Animator>();
+        lightningAnimator = lightning.GetComponent<Animator>();
     }
     //dvir start attack animation where isKilling = true
     //dvir start attack animation where isKilling = true
@@ -89,9 +96,13 @@ public class swordAttack : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
             canPlayBoom = false;
             shakeAnimator.SetBool("robotShake", true);
+<<<<<<< Updated upstream
             lightAnimator.SetBool("lightning", true);
             exposureAnimator.SetBool("lightning", true);
             //lightningExp.SetActive(true);
+=======
+            lightningAnimator.SetBool("lightning", true);
+>>>>>>> Stashed changes
             isKilling = true;
             yield return new WaitForSeconds(.25f);
         }
@@ -100,6 +111,7 @@ public class swordAttack : MonoBehaviour
         lightAnimator.SetBool("lightning", false);
         isAttacking = false;
         shakeAnimator.SetBool("robotShake", false);
+        lightningAnimator.SetBool("lightning", false);
         isKilling = false;
         if (isReseting)
         {

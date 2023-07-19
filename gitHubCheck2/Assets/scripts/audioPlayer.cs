@@ -16,6 +16,7 @@ public class audioPlayer : MonoBehaviour
 
     private bool playDashSound=true;
     public bool playRunSound = true;
+<<<<<<< Updated upstream
     private bool canPlayOthers;
 
     private float resetBipTimer;
@@ -26,6 +27,17 @@ public class audioPlayer : MonoBehaviour
         bipTimer = resetBipTimer;
     }
     private void swordAttack1()
+=======
+    private GameObject slime;
+
+    private void Start()
+    {
+        slime = GameObject.Find("smallSlime1");
+
+    }
+
+        private void swordAttack1()
+>>>>>>> Stashed changes
     {
         NoLoopSrc.clip = sword1;
         NoLoopSrc.Play();
@@ -94,7 +106,11 @@ public class audioPlayer : MonoBehaviour
             swordAttack2();
         }
 
+<<<<<<< Updated upstream
         if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlaySwordAttack3 && canPlayOthers)
+=======
+        if (swordAttack.isAttacking && swordAttack.isKilling && swordAttack.attackNum == 3 && swordAttack.canPlaySwordAttack3)
+>>>>>>> Stashed changes
         {
             swordAttack3();
           
@@ -102,7 +118,6 @@ public class audioPlayer : MonoBehaviour
 
         if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlayBoom && canPlayOthers)
         {
-           
             Boom();
         }
 
