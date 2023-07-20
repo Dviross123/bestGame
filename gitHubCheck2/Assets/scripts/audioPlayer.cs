@@ -14,9 +14,8 @@ public class audioPlayer : MonoBehaviour
     public bowAttack bowAttack;
     public firstLetterAppear firstLetterAppear;
 
-    private bool playDashSound=true;
+    private bool playDashSound = true;
     public bool playRunSound = true;
-<<<<<<< Updated upstream
     private bool canPlayOthers;
 
     private float resetBipTimer;
@@ -27,17 +26,6 @@ public class audioPlayer : MonoBehaviour
         bipTimer = resetBipTimer;
     }
     private void swordAttack1()
-=======
-    private GameObject slime;
-
-    private void Start()
-    {
-        slime = GameObject.Find("smallSlime1");
-
-    }
-
-        private void swordAttack1()
->>>>>>> Stashed changes
     {
         NoLoopSrc.clip = sword1;
         NoLoopSrc.Play();
@@ -67,7 +55,7 @@ public class audioPlayer : MonoBehaviour
         NoLoopSrc.Play();
     }
 
-    private void Dash() 
+    private void Dash()
     {
         NoLoopSrc.clip = dashSfx;
         NoLoopSrc.Play();
@@ -96,7 +84,7 @@ public class audioPlayer : MonoBehaviour
         resetBipTimer = Random.Range(0.05f, .5f);
         bipTimer -= Time.deltaTime;
 
-        if (swordAttack.isAttacking && swordAttack.attackNum == 1 && swordAttack.canPlaySwordAttack1 && canPlayOthers) 
+        if (swordAttack.isAttacking && swordAttack.attackNum == 1 && swordAttack.canPlaySwordAttack1 && canPlayOthers)
         {
             swordAttack1();
         }
@@ -106,36 +94,33 @@ public class audioPlayer : MonoBehaviour
             swordAttack2();
         }
 
-<<<<<<< Updated upstream
         if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlaySwordAttack3 && canPlayOthers)
-=======
-        if (swordAttack.isAttacking && swordAttack.isKilling && swordAttack.attackNum == 3 && swordAttack.canPlaySwordAttack3)
->>>>>>> Stashed changes
         {
             swordAttack3();
-          
+
         }
 
         if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlayBoom && canPlayOthers)
         {
+
             Boom();
         }
 
-        if (bowAttack.canPlayStrech && canPlayOthers) 
+        if (bowAttack.canPlayStrech && canPlayOthers)
         {
             BowStrech();
         }
 
         if (firstLetterAppear.inTrigger)
         {
-            if (bipTimer <= 0f) 
+            if (bipTimer <= 0f)
             {
                 Bip();
                 bipTimer = resetBipTimer;
                 canPlayOthers = false;
             }
         }
-        else 
+        else
         {
             canPlayOthers = true;
             stopLoopSrc();

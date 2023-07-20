@@ -309,8 +309,20 @@ public class playerManager: MonoBehaviour
 
             else if (!PlayerMovement.isDashing && !PlayerMovement.isFastFalling)
             {
-                SceneManager.LoadScene(respawn);
+                health--;
             }
+        }
+
+        if (collision.gameObject.CompareTag("smallSlimeNoKill"))
+        {
+            if (PlayerMovement.isFastFalling || (PlayerMovement.isDashing && Input.GetAxisRaw("Vertical") < 0f))
+            {
+                isKillingSlimeFF = true;
+                rb.velocity = new Vector2(rb.velocity.x, smallBoostPower);
+                killSmallSlime = true;
+            }
+
+
         }
     }
 

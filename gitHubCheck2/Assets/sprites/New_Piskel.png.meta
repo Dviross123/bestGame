@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a99148f86777cf43b99522cd5830061
+guid: d5960a297b991fd42b94d7457728cb5d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,148 +117,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lightning_0
+      name: New_Piskel_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 95
-        width: 7
-        height: 1
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 0
+        y: 32
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 929b2e22b932f7646a67e7a72f1bde8e
-      internalID: -198158558
+      spriteID: 8817f475b72976449b9009e85fa4b19d
+      internalID: 1159136003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_1
+      name: New_Piskel_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 93
-        width: 7
-        height: 3
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 0
+        y: 64
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f163a0df2ed6cc4b95eab7828daa53f
-      internalID: 807370811
+      spriteID: 1c12a7f982369c047853dc367f3c3d95
+      internalID: 1690456857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_2
+      name: New_Piskel_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 91
-        width: 11
-        height: 5
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 32
+        y: 32
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f70aa6944ad202847b299604c7d4f57f
-      internalID: -1158484272
+      spriteID: 3381654d6e879fe449ea9036fd16365b
+      internalID: 2069146698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_3
+      name: New_Piskel_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 54
-        width: 19
-        height: 10
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 32
+        y: 64
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c86ca7a7550962a499947ed9a802d21e
-      internalID: 924621622
+      spriteID: 7a9cb8cf2c69e9849aa077b4eed5525e
+      internalID: -2126208334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_4
+      name: New_Piskel_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 52
-        width: 16
-        height: 12
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 64
+        y: 64
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fd5ba3cfbef6b8498b0daa2a2d16af5
-      internalID: 1899431645
+      spriteID: de721cc19c2d3b840b692f1c0a51a404
+      internalID: 474589328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_5
+      name: New_Piskel_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 44
-        width: 21
-        height: 20
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 64
+        y: 32
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3d2642f8d0bf84783845cb62d882b0
-      internalID: 681760085
+      spriteID: 90430f03bf3bbb24583cc0066bf23e93
+      internalID: -884513631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lightning_6
+      name: New_Piskel_6
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 19
-        height: 29
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 0
+        y: 0
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2c6e1aa08ce2b04f93784c10e416309
-      internalID: 1923239319
+      spriteID: 5529c3e7e6efe1846a349f7c8c7d5e08
+      internalID: -1849375527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c51ed51ecdc1574e87ca38d8150cbc7
+      internalID: 1289503537
       vertices: []
       indices: 
       edges: []
@@ -274,13 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lightning_0: -198158558
-      lightning_1: 807370811
-      lightning_2: -1158484272
-      lightning_3: 924621622
-      lightning_4: 1899431645
-      lightning_5: 681760085
-      lightning_6: 1923239319
+      New_Piskel_0: 1159136003
+      New_Piskel_1: 1690456857
+      New_Piskel_2: 2069146698
+      New_Piskel_3: -2126208334
+      New_Piskel_4: 474589328
+      New_Piskel_5: -884513631
+      New_Piskel_6: -1849375527
+      New_Piskel_7: 1289503537
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

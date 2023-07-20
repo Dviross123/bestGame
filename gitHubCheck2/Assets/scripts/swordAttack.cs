@@ -11,7 +11,7 @@ public class swordAttack : MonoBehaviour
     public bool isKilling = false;
 
     //sword attacks bools
-    public bool canPlaySwordAttack1= false;
+    public bool canPlaySwordAttack1 = false;
     public bool canPlaySwordAttack2 = false;
     public bool canPlaySwordAttack3 = false;
     public bool canPlayBoom = false;
@@ -20,25 +20,18 @@ public class swordAttack : MonoBehaviour
     private float resetAttackTime = 1.25f;
     public PlayerMovement player;
     private GameObject camera;
-    private GameObject lightning;
     private Animator shakeAnimator;
-<<<<<<< Updated upstream
     public Animator lightAnimator;
     public Animator exposureAnimator;
     public GameObject lightningExp;
 
-=======
-    private Animator lightningAnimator;
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
         //lightningExp.SetActive(false);
         attackNum = 0;
         camera = GameObject.Find("MainCamera");
-        lightning = GameObject.Find("lightning");
         shakeAnimator = camera.GetComponent<Animator>();
-        lightningAnimator = lightning.GetComponent<Animator>();
     }
     //dvir start attack animation where isKilling = true
     //dvir start attack animation where isKilling = true
@@ -61,9 +54,9 @@ public class swordAttack : MonoBehaviour
     //coroutine not stopping when attacking in combo
     private IEnumerator attack()
     {
-        
+
         isAttacking = true;
-        
+
         attackNum++;
         if (attackNum == 1)
         {
@@ -76,7 +69,7 @@ public class swordAttack : MonoBehaviour
 
         }
 
-        else if (attackNum == 2) 
+        else if (attackNum == 2)
         {
             canPlaySwordAttack2 = true;
             yield return new WaitForSeconds(0.01f);
@@ -96,13 +89,9 @@ public class swordAttack : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
             canPlayBoom = false;
             shakeAnimator.SetBool("robotShake", true);
-<<<<<<< Updated upstream
             lightAnimator.SetBool("lightning", true);
             exposureAnimator.SetBool("lightning", true);
             //lightningExp.SetActive(true);
-=======
-            lightningAnimator.SetBool("lightning", true);
->>>>>>> Stashed changes
             isKilling = true;
             yield return new WaitForSeconds(.25f);
         }
@@ -111,7 +100,6 @@ public class swordAttack : MonoBehaviour
         lightAnimator.SetBool("lightning", false);
         isAttacking = false;
         shakeAnimator.SetBool("robotShake", false);
-        lightningAnimator.SetBool("lightning", false);
         isKilling = false;
         if (isReseting)
         {
@@ -137,6 +125,7 @@ public class swordAttack : MonoBehaviour
             yield return null;
         }
         isReseting = false;
+        Debug.Log("shalom");
     }
     private IEnumerator attackR()
     {
@@ -146,8 +135,8 @@ public class swordAttack : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         canAttack = true;
     }
-    
 
-    
+
+
 
 }

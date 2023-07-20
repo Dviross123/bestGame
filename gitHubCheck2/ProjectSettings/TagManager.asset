@@ -15,6 +15,7 @@ TagManager:
   - strongRobot
   - sword
   - arrow
+  - smallSlimeNoKill
   layers:
   - Default
   - TransparentFX
