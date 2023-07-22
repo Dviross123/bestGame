@@ -21,7 +21,7 @@ public class swordAttack : MonoBehaviour
     public PlayerMovement player;
     private GameObject camera;
     private Animator shakeAnimator;
-    public Animator lightAnimator;
+    //public Animator lightAnimator;
     public Animator exposureAnimator;
     public GameObject lightningExp;
 
@@ -89,7 +89,7 @@ public class swordAttack : MonoBehaviour
             yield return new WaitForSeconds(0.001f);
             canPlayBoom = false;
             shakeAnimator.SetBool("robotShake", true);
-            lightAnimator.SetBool("lightning", true);
+            //lightAnimator.SetBool("lightning", true);
             exposureAnimator.SetBool("lightning", true);
             //lightningExp.SetActive(true);
             isKilling = true;
@@ -97,7 +97,7 @@ public class swordAttack : MonoBehaviour
         }
         exposureAnimator.SetBool("lightning", false);
         //lightningExp.SetActive(false);
-        lightAnimator.SetBool("lightning", false);
+        //lightAnimator.SetBool("lightning", false);
         isAttacking = false;
         shakeAnimator.SetBool("robotShake", false);
         isKilling = false;

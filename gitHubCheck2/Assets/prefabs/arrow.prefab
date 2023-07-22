@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f85acb3dafeec489ebb747adaf70fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallSlime: {fileID: 5168593369561221488, guid: 6f524a8beb51c534b97441be2f47febf, type: 3}
-  player: {fileID: 9069046769741291899, guid: aa77304706a7a354aa60d4ea5c4a4bcd, type: 3}
+  smallSlime: {fileID: 1314327277836953574, guid: 0970deef78186c34089149993866b78d, type: 3}
+  player: {fileID: 3014575997191909258, guid: 4bc75b44b5dd4ff4fb029e31bec5f1a1, type: 3}
 --- !u!50 &-5638149025998861946
 Rigidbody2D:
   serializedVersion: 4

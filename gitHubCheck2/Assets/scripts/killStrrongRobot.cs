@@ -10,13 +10,18 @@ public class killStrrongRobot : MonoBehaviour
     public bool canDamage = true;
 
     //scripts
-    public swordAttack swordAttack;
-    public bowAttack bowAttack;
+    private swordAttack swordAttack;
+    private bowAttack bowAttack;
+
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         robotHealth = maxRobotHealth;
+        player = GameObject.Find("Player");
+        swordAttack = player.GetComponent<swordAttack>();
+        bowAttack = player.GetComponent<bowAttack>();
     }
 
     // Update is called once per frame

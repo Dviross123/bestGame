@@ -12,7 +12,9 @@ public class audioPlayer : MonoBehaviour
     public PlayerMovement playerMovement;
     public swordAttack swordAttack;
     public bowAttack bowAttack;
-    public firstLetterAppear firstLetterAppear;
+
+    private firstLetterAppear firstLetterAppear;
+    private GameObject messege;
 
     private bool playDashSound = true;
     public bool playRunSound = true;
@@ -23,8 +25,25 @@ public class audioPlayer : MonoBehaviour
 
     private void Start()
     {
+        messege = GameObject.Find("messege");
+
+        if (messege == null)
+        {
+            Debug.LogError("The 'messege' GameObject is missing in the scene.");
+            return;
+        }
+
+        firstLetterAppear = messege.GetComponent<firstLetterAppear>();
+
+        if (firstLetterAppear == null)
+        {
+            Debug.LogError("The 'firstLetterAppear' script is missing on the 'messege' GameObject.");
+            return;
+        }
+
         bipTimer = resetBipTimer;
     }
+
     private void swordAttack1()
     {
         NoLoopSrc.clip = sword1;
@@ -77,10 +96,33 @@ public class audioPlayer : MonoBehaviour
     {
 
         LoopSrc.Stop();
+
     }
+
 
     private void Update()
     {
+
+
+        if (firstLetterAppear != null && firstLetterAppear.inTrigger)
+        {
+            if (bipTimer <= 0f)
+            {
+                Bip();
+                bipTimer = resetBipTimer;
+                canPlayOthers = false;
+            }
+        }
+        else
+        {
+            canPlayOthers = true;
+            stopLoopSrc();
+        }       
+
+
+
+
+
         resetBipTimer = Random.Range(0.05f, .5f);
         bipTimer -= Time.deltaTime;
 
@@ -111,20 +153,7 @@ public class audioPlayer : MonoBehaviour
             BowStrech();
         }
 
-        if (firstLetterAppear.inTrigger)
-        {
-            if (bipTimer <= 0f)
-            {
-                Bip();
-                bipTimer = resetBipTimer;
-                canPlayOthers = false;
-            }
-        }
-        else
-        {
-            canPlayOthers = true;
-            stopLoopSrc();
-        }
+
 
 
 
