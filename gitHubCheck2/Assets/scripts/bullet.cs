@@ -6,21 +6,23 @@ public class bullet : MonoBehaviour
 {
     public float speed;
 
-    private Transform player;
+    private Transform playerTrans;
     private Vector2 target;
  
     public float bulletLifeTime;
-    public GameObject Player;
-    private playerManager player1;
+    public GameObject player;
+    private playerManager playerManager;
 
 
     void Start()
     {
-        player1 = Player.GetComponent<playerManager>();
+        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player= GameObject.FindGameObjectWithTag("Player");
 
-        target = new Vector2(player.position.x, player.position.y);
+        playerManager = player.GetComponent<playerManager>();
+
+        target = new Vector2(playerTrans.position.x, playerTrans.position.y);
         
     }
 

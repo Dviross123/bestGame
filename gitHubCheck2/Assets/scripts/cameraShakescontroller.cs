@@ -14,23 +14,23 @@ public class cameraShakescontroller : MonoBehaviour
     {
   
     }
-    void Update()
-    {
+    //void Update()
+    //{
 
-        if ((playerMovement.isDashing && !playerMovement.IsGrounded()) || playerMovement.IsSliding || playerMovement.isFastFalling)
-        {
-            animator.SetBool("playerDash", true);
+    //    if ((playerMovement.isDashing && !playerMovement.IsGrounded()) || playerMovement.IsSliding || playerMovement.isFastFalling)
+    //    {
+    //        animator.SetBool("playerDash", true);
 
-        }
+    //    }
 
-        else
-        {
-            animator.SetBool("playerDash", false);
-        }
-
-
+    //    else
+    //    {
+    //        animator.SetBool("playerDash", false);
+    //    }
 
 
-    }
+
+
+    //}
     
 }
