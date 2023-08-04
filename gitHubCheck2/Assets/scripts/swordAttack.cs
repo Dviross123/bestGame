@@ -120,16 +120,13 @@ public class swordAttack : MonoBehaviour
         else
         {
             wasAttacking = false;
-            //Debug.Log("aaaaaaaaaaaaaaaaaaaa");
             isReseting = false;
             yield return null;
         }
         isReseting = false;
-        Debug.Log("shalom");
     }
     private IEnumerator attackR()
     {
-        //Debug.Log("0");
         attackNum = 0;
         canAttack = false;
         yield return new WaitForSeconds(0.05f);

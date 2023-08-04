@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5322503845658111155}
   - component: {fileID: 5322503845658111152}
   - component: {fileID: -8173887799878333164}
+  - component: {fileID: 5542549605635930272}
   m_Layer: 5
   m_Name: health button 1
   m_TagString: Untagged
@@ -91,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -121,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5322503845658111155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5542549605635930272}
+        m_TargetAssemblyTypeName: heal, Assembly-CSharp
+        m_MethodName: HealPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-8173887799878333164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,4 +148,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 9043668252239719017, guid: 195510e3a90e53d409ac86ad8d5dc643, type: 3}
-  playerMovement: {fileID: 1801403427746026335, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+--- !u!114 &5542549605635930272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322503845658111158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f31699adf400d47a17f78640832fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

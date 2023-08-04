@@ -49,9 +49,9 @@ public class bowAttack : MonoBehaviour
             Vector2 position = (Vector2)pointTrans.position + direction.normalized  * (launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
             return position;
         }
-        else 
+        else
         {
-            Vector2 position = (Vector2)pointTrans.position + direction.normalized * -1*(launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
+            Vector2 position = (Vector2)pointTrans.position + direction.normalized * -1 * (launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
             return position;
         }
     }

@@ -10,12 +10,12 @@ public class arrow : MonoBehaviour
     public GameObject smallSlime;
     public GameObject player;
 
-    private playerManager playerManager; // Fixed variable declaration
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        playerManager = player.GetComponent<playerManager>(); // Fixed variable assignment
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

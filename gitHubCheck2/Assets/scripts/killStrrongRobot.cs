@@ -10,8 +10,8 @@ public class killStrrongRobot : MonoBehaviour
     public bool canDamage = true;
 
     //scripts
-    private swordAttack swordAttack;
-    private bowAttack bowAttack;
+    private GameObject swordAttack;
+    private GameObject bowAttack;
 
     private GameObject player;
 
@@ -20,8 +20,8 @@ public class killStrrongRobot : MonoBehaviour
     {
         robotHealth = maxRobotHealth;
         player = GameObject.Find("Player");
-        swordAttack = player.GetComponent<swordAttack>();
-        bowAttack = player.GetComponent<bowAttack>();
+        swordAttack = GameObject.Find("sword"); ;
+        bowAttack = GameObject.Find("bow"); ;
     }
 
     // Update is called once per frame
@@ -36,14 +36,16 @@ public class killStrrongRobot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("arrow"))
         {
+            Debug.Log("arrow");
             robotHealth--;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("arrow");
         if (collision.gameObject.CompareTag("arrow"))
         {
-            if (bowAttack.isMaxForce)
+            if (bowAttack.GetComponent<bowAttack>().isMaxForce)
             {
                 Debug.Log("big pew");
                 robotHealth -= 2f;
@@ -58,14 +60,16 @@ public class killStrrongRobot : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("sword") && swordAttack.isKilling && swordAttack.attackNum == 3 && canDamage)
+        Debug.Log("sword");
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
         {
+            Debug.Log("swordBig");
             robotHealth -= 2;
             canDamage = false;
         }
-
-        else if (collision.gameObject.CompareTag("sword") && swordAttack.isKilling && canDamage)
+        else if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && canDamage)
         {
+            Debug.Log("sword");
             robotHealth--;
             canDamage = false;
         }
@@ -74,6 +78,4 @@ public class killStrrongRobot : MonoBehaviour
     {
         canDamage = true;
     }
-
-
-    }
+}

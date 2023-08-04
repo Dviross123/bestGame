@@ -16,6 +16,8 @@ TagManager:
   - sword
   - arrow
   - smallSlimeNoKill
+  - tempHeal
+  - heal
   layers:
   - Default
   - TransparentFX

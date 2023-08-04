@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumpSliding = false;
     private float slidingDirection = 0f;
     private bool JumpSliding = false;
-
+    private bool wasSliding = false;
 
     public bowAttack bowAttack;
 
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        if (bowAttack.isShooting) 
+        if (bowAttack.isShooting)
         {
             stopSpeed -= Time.deltaTime;
         }
@@ -104,13 +104,13 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
             Jumps++;
         }
-        else 
+        else
         {
             isJumping = false;
         }
-        
+
         //checks when you can dash
-        if (Input.GetButtonDown("Fire3") && canDash && gravityReturned && !isFastFalling&& dashCounter>0f)
+        if (Input.GetButtonDown("Fire3") && canDash && gravityReturned && !isFastFalling && dashCounter > 0f)
         {
             StartCoroutine(Dash());
         }
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jumps = 0;
             canDash = true;
-            if (dashCounter < 1f) 
+            if (dashCounter < 1f)
             {
                 dashCounter++;
             }
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         WallSlide();
         WallJump();
         //flips the player when nessecery
-        if (!isWallJumping)
+        if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
         {
             Flip();
         }
@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
             isFastFalling = false;
         }
         //sliding
-        if (Input.GetButtonDown("Fire2") && IsGrounded()  )
+        if (Input.GetButtonDown("Fire2") && IsGrounded())
         {
 
             preVel = rb.velocity.x;
@@ -163,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetButtonUp("Fire2") || !IsGrounded() || isJumpSliding) && IsSliding)
         {
             IsSliding = false;
+            wasSliding = true;
         }
         if (IsSliding && Input.GetButtonDown("Jump"))
         {
@@ -181,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
 
         //lower momentum if moving to other direction
         Momentum();
-           
+
         if (extraMomentumDirection == horizontal * -1 && extraMomentumDirection != 0 && extraMomentum > 0.1f)
         {
             if (extraMomentum > 24f)
@@ -196,23 +197,23 @@ public class PlayerMovement : MonoBehaviour
         //if fast falling change momentum accordingly
         else if (isFastFalling)
         {
-            rb.velocity = new Vector2(horizontal * speed / 3, rb.velocity.y+fastFallpower);
+            rb.velocity = new Vector2(horizontal * speed / 3, rb.velocity.y + fastFallpower);
         }
 
         //bow attack
         else if (bowAttack.isShooting)
         {
 
-            extraMomentum = 0f;          
+            extraMomentum = 0f;
             if (stopSpeed > 0f)
             {
                 rb.velocity = new Vector2(horizontal * speed * stopSpeed, rb.velocity.y);
             }
-            else 
+            else
             {
-                rb.velocity = new Vector2(0f , rb.velocity.y);
+                rb.velocity = new Vector2(0f, rb.velocity.y);
             }
-               
+
         }
 
         else if (IsSliding)
@@ -236,13 +237,20 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator StopSliding()
     {
         yield return new WaitForSeconds(1f);
-        IsSliding = false;
+        if (wasSliding)
+        {
+            wasSliding = false;
+        }
+        else
+        {
+            IsSliding = false;
+        }
     }
 
 
     public IEnumerator JumpSlide()
     {
-        
+
         yield return new WaitForSeconds(0.5f);
         canFastFall = true;
         JumpSliding = false;
@@ -262,7 +270,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsWalled() && !IsGrounded() && horizontal != 0f && !isDashing)
         {
-
             isWallSliding = true;
             if (extraMomentum > 30)
                 rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed * 24);
@@ -288,10 +295,14 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpingCounter -= Time.deltaTime;
         }
+
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0 && wallJumpingAmount < wallJumpingAllowed && !canSlamStorage)
+            extraMomentum = 0f;
+        else { }
         //slam storage thing
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0 && Input.GetButton("Fire2") && canSlamStorage)
         {
-            extraMomentum += 36f;
+            extraMomentum = 36f;
             canSlamStorage = false;
         }
 
@@ -304,7 +315,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
             if (canSlamStorage) extraMomentum = 0f;
-
             if (transform.localScale.x != wallJumpingDirection)
             {
                 isFacingRight = !isFacingRight;
@@ -357,7 +367,10 @@ public class PlayerMovement : MonoBehaviour
         else vert = 0f;
         if (hori == 0 && vert == 0)
         {
-            rb.velocity = new Vector2(transform.localScale.x * dashingPower, hori * dashingPower);
+            if (isFacingRight)
+                rb.velocity = new Vector2(dashingPower, 0f);
+            else
+                rb.velocity = new Vector2(-dashingPower, 0f);
         }
         //when not wave dashing but dashing delete momentum
         else if (hori == 0 || vert >= 0)

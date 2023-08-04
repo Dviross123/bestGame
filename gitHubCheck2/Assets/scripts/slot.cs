@@ -11,7 +11,6 @@ public class slot : MonoBehaviour
 
     private void Start()
     {
-
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<inventory>();
     }
 
@@ -19,16 +18,15 @@ public class slot : MonoBehaviour
     {
         if (transform.childCount <= 0)
         {
-            inventory.items[index] = 0;
+            inventory.isFull[index] = false;
         }
     }
 
     public void Cross()
     {
-
         foreach (Transform child in transform)
         {
-            child.GetComponent<spawn>().SpawnItem();
+            child.GetComponent<spawn>()?.SpawnItem();
             GameObject.Destroy(child.gameObject);
         }
     }
