@@ -27,8 +27,7 @@ public class pickUp : MonoBehaviour
                 { // check whether the slot is EMPTY
                     //Instantiate(effect, transform.position, Quaternion.identity);
                     inventory.isFull[i] = true; // makes sure that the slot is now considered FULL
-                    Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
-                    Instantiate(gameObject, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                    Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with i               
                     
                    Destroy(gameObject);
                     break;

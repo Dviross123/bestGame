@@ -25,6 +25,8 @@ public class swordAttack : MonoBehaviour
     public Animator exposureAnimator;
     public GameObject lightningExp;
 
+    public slot slot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,58 +57,60 @@ public class swordAttack : MonoBehaviour
     private IEnumerator attack()
     {
 
-        isAttacking = true;
+            isAttacking = true;
 
-        attackNum++;
-        if (attackNum == 1)
-        {
-            canPlaySwordAttack1 = true;
-            yield return new WaitForSeconds(0.01f);
-            canPlaySwordAttack1 = false;
-            yield return new WaitForSeconds(0.15f);
-            isKilling = true;
-            yield return new WaitForSeconds(0.30f);
 
-        }
+            attackNum++;
+            if (attackNum == 1)
+            {
+                canPlaySwordAttack1 = true;
+                yield return new WaitForSeconds(0.01f);
+                canPlaySwordAttack1 = false;
+                yield return new WaitForSeconds(0.15f);
+                isKilling = true;
+                yield return new WaitForSeconds(0.30f);
 
-        else if (attackNum == 2)
-        {
-            canPlaySwordAttack2 = true;
-            yield return new WaitForSeconds(0.01f);
-            canPlaySwordAttack2 = false;
-            yield return new WaitForSeconds(0.05f);
-            isKilling = true;
-            yield return new WaitForSeconds(0.25f);
-        }
+            }
 
-        else if (attackNum == 3)
-        {
-            canPlaySwordAttack3 = true;
-            yield return new WaitForSeconds(0.01f);
-            canPlaySwordAttack3 = false;
-            yield return new WaitForSeconds(.75f);
-            canPlayBoom = true;
-            yield return new WaitForSeconds(0.001f);
-            canPlayBoom = false;
-            shakeAnimator.SetBool("robotShake", true);
-            //lightAnimator.SetBool("lightning", true);
-            exposureAnimator.SetBool("lightning", true);
-            //lightningExp.SetActive(true);
-            isKilling = true;
-            yield return new WaitForSeconds(.25f);
-        }
-        exposureAnimator.SetBool("lightning", false);
-        //lightningExp.SetActive(false);
-        //lightAnimator.SetBool("lightning", false);
-        isAttacking = false;
-        shakeAnimator.SetBool("robotShake", false);
-        isKilling = false;
-        if (isReseting)
-        {
-            wasAttacking = true;
-        }
-        StartCoroutine(attackReset());
-        yield return new WaitForSeconds(0.1f);
+            else if (attackNum == 2)
+            {
+                canPlaySwordAttack2 = true;
+                yield return new WaitForSeconds(0.01f);
+                canPlaySwordAttack2 = false;
+                yield return new WaitForSeconds(0.05f);
+                isKilling = true;
+                yield return new WaitForSeconds(0.25f);
+            }
+
+            else if (attackNum == 3)
+            {
+                canPlaySwordAttack3 = true;
+                yield return new WaitForSeconds(0.01f);
+                canPlaySwordAttack3 = false;
+                yield return new WaitForSeconds(.75f);
+                canPlayBoom = true;
+                yield return new WaitForSeconds(0.001f);
+                canPlayBoom = false;
+                shakeAnimator.SetBool("robotShake", true);
+                //lightAnimator.SetBool("lightning", true);
+                exposureAnimator.SetBool("lightning", true);
+                //lightningExp.SetActive(true);
+                isKilling = true;
+                yield return new WaitForSeconds(.25f);
+            }
+            exposureAnimator.SetBool("lightning", false);
+            //lightningExp.SetActive(false);
+            //lightAnimator.SetBool("lightning", false);
+            isAttacking = false;
+            shakeAnimator.SetBool("robotShake", false);
+            isKilling = false;
+            if (isReseting)
+            {
+                wasAttacking = true;
+            }
+            StartCoroutine(attackReset());
+            yield return new WaitForSeconds(0.1f);
+        
     }
     private IEnumerator attackReset()
     {

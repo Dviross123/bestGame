@@ -7,7 +7,9 @@ public class slot : MonoBehaviour
 
 
     private inventory inventory;
+    public swordAttack swordAttack;
     public int index;
+    public bool isDroppingItem = false;
 
     private void Start()
     {
@@ -26,8 +28,9 @@ public class slot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            child.GetComponent<spawn>()?.SpawnItem();
+            child.GetComponent<spawn>().SpawnItem();
             GameObject.Destroy(child.gameObject);
+            
         }
     }
 

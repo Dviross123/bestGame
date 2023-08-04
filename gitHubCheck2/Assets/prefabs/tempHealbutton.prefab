@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5322503845658111155}
   - component: {fileID: 5322503845658111152}
   - component: {fileID: -8173887799878333164}
-  - component: {fileID: 5542549605635930272}
+  - component: {fileID: 7520432791549451682}
   m_Layer: 5
-  m_Name: health button 1
+  m_Name: tempHealbutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -511354589, guid: 870ff8fb53879f84387ca755f3e31731, type: 3}
+  m_Sprite: {fileID: 1381835962, guid: 6fb8f3c6a817d22469ce1cf9d0cb3956, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5542549605635930272}
-        m_TargetAssemblyTypeName: heal, Assembly-CSharp
-        m_MethodName: HealPlayer
+      - m_Target: {fileID: 7520432791549451682}
+        m_TargetAssemblyTypeName: healTemp, Assembly-CSharp
+        m_MethodName: HealPlayerTemp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b0267c5041903468fb93ce3286aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 9043668252239719017, guid: 195510e3a90e53d409ac86ad8d5dc643, type: 3}
---- !u!114 &5542549605635930272
+  item: {fileID: 8914660485967909427, guid: aed77b3ed3dcdb141bc3f2f1277f7841, type: 3}
+--- !u!114 &7520432791549451682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5322503845658111158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0f31699adf400d47a17f78640832fd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeOfHeal: 0
