@@ -9,13 +9,13 @@ public class EnemySlimeScript : MonoBehaviour
     [SerializeField] private Transform checkWallEnemy;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
-    public PlayerMovement playerMovement;
+    private GameObject playerMovement;
     public float enemyWalkSpeed = 3f;
     private bool isJumping;
 
     private void Start()
     {
-        
+        playerMovement = GameObject.Find("Player");
     }
     private bool CanWalkForward()
     {
@@ -33,7 +33,7 @@ public class EnemySlimeScript : MonoBehaviour
             isJumping = false;
         if (isJumping)
             return;
-        if ((checkSameX() && checkAbove() && !isJumping) || !checkAbove())
+        if (checkSameX() && checkAbove() && !isJumping)
         {
             isJumping = true;
             rbE.velocity = new Vector2(0f, 8f);
@@ -53,7 +53,7 @@ public class EnemySlimeScript : MonoBehaviour
 
     bool checkSameX()
     {
-        if(playerMovement.transform.localPosition.x >= -4f + transform.localPosition.x && playerMovement.transform.localPosition.x <= 4f + transform.localPosition.x)
+        if(playerMovement.GetComponent<PlayerMovement>().transform.localPosition.x >= -8f + transform.localPosition.x && playerMovement.GetComponent<PlayerMovement>().transform.localPosition.x <= 8f + transform.localPosition.x)
         {
             return true;
         }
@@ -61,7 +61,7 @@ public class EnemySlimeScript : MonoBehaviour
     }
     bool checkAbove()
     {
-        if(playerMovement.transform.localPosition.y > transform.localPosition.y+2f)
+        if(playerMovement.GetComponent<PlayerMovement>().transform.localPosition.y > transform.localPosition.y+2f)
         {
             return true;
         }
