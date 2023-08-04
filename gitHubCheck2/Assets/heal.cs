@@ -5,6 +5,8 @@ using UnityEngine;
 public class heal : MonoBehaviour
 {
     private GameObject player;
+    public healthBar healthBar;
+    public playerManager playerManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class heal : MonoBehaviour
         {
             player.GetComponent<playerManager>().health++;
             GameObject.Destroy(gameObject);
+            healthBar.SetHealth(playerManager.health, playerManager.resetHealth);
         }
     }
 }

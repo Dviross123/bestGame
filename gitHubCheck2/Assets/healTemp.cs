@@ -5,7 +5,6 @@ using UnityEngine;
 public class healTemp : MonoBehaviour
 {
     private GameObject player;
-    public float timeOfHeal;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +19,12 @@ public class healTemp : MonoBehaviour
     }
     private IEnumerator temphealthUp()
     {
-        player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth + 5;
-        yield return new WaitForSeconds(timeOfHeal);
-        player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth;
+        float oldHealth = player.GetComponent<playerManager>().health;
+        player.GetComponent<playerManager>().resetHealth = 15f;
+        player.GetComponent<playerManager>().health += 5f;
+        yield return new WaitForSeconds(25f);
+        player.GetComponent<playerManager>().resetHealth = 10f;
+         player.GetComponent<playerManager>().health = oldHealth;
         GameObject.Destroy(gameObject);
 
     }
