@@ -29,7 +29,7 @@ public class audioPlayer : MonoBehaviour
 
         if (messege == null)
         {
-            Debug.LogError("The 'messege' GameObject is missing in the scene.");
+            Debug.Log("The 'messege' GameObject is missing in the scene.");
             return;
         }
 
@@ -37,7 +37,7 @@ public class audioPlayer : MonoBehaviour
 
         if (firstLetterAppear == null)
         {
-            Debug.LogError("The 'firstLetterAppear' script is missing on the 'messege' GameObject.");
+            Debug.Log("The 'firstLetterAppear' script is missing on the 'messege' GameObject.");
             return;
         }
 
