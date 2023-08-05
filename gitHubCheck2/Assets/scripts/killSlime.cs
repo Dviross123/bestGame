@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class killSlime : MonoBehaviour
 {
+    private float damage = 1;
     public bool slimeDeath;
     public bool smallSlimeExplode;
     private GameObject sword;
@@ -38,7 +39,7 @@ public class killSlime : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Player"))
-        {
+        {      
             if (player.GetComponent<playerManager>().isKillingSlimeFF)
             {
                 gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;

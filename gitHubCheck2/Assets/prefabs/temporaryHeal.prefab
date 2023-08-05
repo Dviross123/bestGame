@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8914660485967909421}
   - component: {fileID: 8914660485967909426}
   - component: {fileID: 7235843843089688914}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: temporaryHeal
   m_TagString: tempHeal
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0053987876, y: -0.00085841864}
+  m_Offset: {x: -0.0053987876, y: -0.000000022351742}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,7 +150,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17939605, y: 0.24246334}
+  m_Size: {x: 0.17939605, y: 0.24418013}
   m_EdgeRadius: 0
 --- !u!114 &8914660485967909426
 MonoBehaviour:
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeOfHeal: 20
 --- !u!114 &7235843843089688914
 MonoBehaviour:
   m_ObjectHideFlags: 0

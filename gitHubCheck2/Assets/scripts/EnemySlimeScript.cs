@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySlimeScript : MonoBehaviour
 {
+    private float damage = 2;
     [SerializeField] private Rigidbody2D rbE;
     [SerializeField] private Transform checkGroundEnemy;
     [SerializeField] private Transform checkWallEnemy;
@@ -67,5 +68,11 @@ public class EnemySlimeScript : MonoBehaviour
         }
         return false;
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerMovement.GetComponent<playerManager>().takeDamage(damage);
+        }
+    }
 }
