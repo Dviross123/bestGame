@@ -6,6 +6,8 @@ public class bullet : MonoBehaviour
 {
     public float speed;
 
+    public float damage = 1;
+
     private Transform playerTrans;
     private Vector2 target;
  
@@ -43,6 +45,11 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent<playerManager>().takeDamage(damage);
+        }
+    }
 }

@@ -20,8 +20,8 @@ public class killStrrongRobot : MonoBehaviour
     {
         robotHealth = maxRobotHealth;
         player = GameObject.Find("Player");
-        swordAttack = GameObject.Find("sword"); ;
-        bowAttack = GameObject.Find("bow"); ;
+        swordAttack = GameObject.Find("sword");
+        bowAttack = GameObject.Find("bow");
     }
 
     // Update is called once per frame

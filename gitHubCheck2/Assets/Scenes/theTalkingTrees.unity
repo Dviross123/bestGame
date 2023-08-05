@@ -4130,6 +4130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1775235227}
+  damage: 1
+  maxHealth: 8
+  health: 0
   speed: 20000
   nextWayPointDistance: 3
   enemyGfx: {fileID: 0}
@@ -6156,6 +6159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1775235227}
+  damage: 1
+  maxHealth: 8
+  health: 0
   speed: 20000
   nextWayPointDistance: 3
   enemyGfx: {fileID: 0}
@@ -6346,8 +6352,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3703918
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1425052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1419308
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.8281853
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
