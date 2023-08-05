@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8914660485967909421}
   - component: {fileID: 8914660485967909426}
   - component: {fileID: 7235843843089688914}
-  - component: {fileID: -4854577040259719664}
   m_Layer: 0
   m_Name: temporaryHeal
   m_TagString: tempHeal
@@ -165,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeOfHeal: 20
 --- !u!114 &7235843843089688914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,15 +178,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 5322503845658111158, guid: cae9d8f9038d8f74a9d7d497cba57468, type: 3}
---- !u!114 &-4854577040259719664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8914660485967909427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522c06333fc431e4f94c55f76c6c5a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

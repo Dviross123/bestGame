@@ -178,17 +178,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-        //lower momentum if moving to other direction
+        
         Momentum();
-
-        if (extraMomentumDirection == horizontal * -1 && extraMomentumDirection != 0 && extraMomentum > 0.1f)
-        {
-            if (extraMomentum > 24f)
-                extraMomentum = 24f;
-            extraMomentum -= 1f;
-        }
         //if is dashing do nothing
         if (isDashing)
         {
@@ -263,7 +254,7 @@ public class PlayerMovement : MonoBehaviour
     //checks when walled
     public bool IsWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer); ;
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer); 
     }
 
     private void WallSlide()
@@ -271,10 +262,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalled() && !IsGrounded() && horizontal != 0f && !isDashing)
         {
             isWallSliding = true;
-            if (extraMomentum > 30)
-                rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed * 24);
-            else
-                rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed * 3);
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed * 3);
         }
         else
         {
@@ -418,6 +406,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 extraMomentum -= 0.075f;
             }
+            //lower momentum if moving to other direction
+            if ((extraMomentumDirection < 0 && isFacingRight) || (extraMomentumDirection > 0 && !isFacingRight))
+            {
+                if (extraMomentum > 24f)
+                    extraMomentum = 24f;
+                extraMomentum -= 0.05f;
+            }
+            else
+                Debug.Log(isFacingRight + " " + extraMomentumDirection);
         }
     }
 

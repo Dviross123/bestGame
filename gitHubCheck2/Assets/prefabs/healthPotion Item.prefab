@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9043668252239719014}
   - component: {fileID: 3150620966892570059}
   - component: {fileID: 7940065720987272884}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: healthPotion Item
   m_TagString: heal
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0021381378}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,5 +163,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.25}
+  m_Size: {x: 0.18, y: 0.2457237}
   m_EdgeRadius: 0
