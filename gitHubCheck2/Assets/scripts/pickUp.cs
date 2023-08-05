@@ -7,6 +7,8 @@ public class pickUp : MonoBehaviour
 
     private inventory inventory;
     public GameObject itemButton;
+
+    public bool pickUpItem = false;
     //public GameObject effect;
 
     private void Start()
@@ -18,22 +20,26 @@ public class pickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // spawn the sun button at the first available inventory slot ! 
-     
 
-            for (int i = 0; i <inventory.slots.Length; i++)
+
+            for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)
                 { // check whether the slot is EMPTY
                     //Instantiate(effect, transform.position, Quaternion.identity);
+                    Debug.Log("touch potion");
+                    pickUpItem = true;
                     inventory.isFull[i] = true; // makes sure that the slot is now considered FULL
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with i               
-                    
-                   Destroy(gameObject);
+
+                    Destroy(gameObject);
                     break;
                 }
             }
         }
 
     }
+
+
 }
+

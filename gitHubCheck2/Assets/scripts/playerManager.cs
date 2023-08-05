@@ -213,6 +213,7 @@ public class playerManager: MonoBehaviour
     {
         if (collision.CompareTag("Bullet")) 
         {
+            health--;
             healthBar.SetHealth(health, resetHealth);
             shakeAnimator.SetBool("robotShake", true);
             Destroy(collision.gameObject);
@@ -336,11 +337,21 @@ public class playerManager: MonoBehaviour
             SlimeAnimator.SetBool("isDead", true);
         }
     }
-    public void takeDamage(float damage)
+
+    public void returnNormalHealth() 
     {
-        health -= damage;
+        StartCoroutine(returnHealth());
     }
-    
-        
+
+    private IEnumerator returnHealth()
+    {
+        float oldHealth = player.GetComponent<playerManager>().health;
+        yield return new WaitForSeconds(25f);
+        player.GetComponent<playerManager>().resetHealth = 10f;
+        player.GetComponent<playerManager>().health = oldHealth;
+    }
+
+
+
 
 }
