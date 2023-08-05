@@ -395,7 +395,7 @@ public class PlayerMovement : MonoBehaviour
             BouncingSpeed -= 1f;
             if (BouncingDirection == -transform.localScale.x && BouncingSpeed > 0)
             {
-                BouncingSpeed = 0f;
+                BouncingSpeed -= 1f;
             }
         }
 

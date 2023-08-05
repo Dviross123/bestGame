@@ -20,8 +20,8 @@ public class killStrrongRobot : MonoBehaviour
     {
         robotHealth = maxRobotHealth;
         player = GameObject.Find("Player");
-        swordAttack = GameObject.Find("sword"); ;
-        bowAttack = GameObject.Find("bow"); ;
+        swordAttack = GameObject.Find("sword");
+        bowAttack = GameObject.Find("bow");
     }
 
     // Update is called once per frame
@@ -60,7 +60,6 @@ public class killStrrongRobot : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("sword");
         if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
         {
             Debug.Log("swordBig");
