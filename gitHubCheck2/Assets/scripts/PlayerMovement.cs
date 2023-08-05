@@ -413,8 +413,6 @@ public class PlayerMovement : MonoBehaviour
                     extraMomentum = 24f;
                 extraMomentum -= 0.05f;
             }
-            else
-                Debug.Log(isFacingRight + " " + extraMomentumDirection);
         }
     }
 
