@@ -12,19 +12,16 @@ public class healTemp : MonoBehaviour
     }
 
 
-    public void HealPlayerTemp()
+
+    public void healthUp()
     {
-        StartCoroutine(temphealthUp());
-        
-    }
-    private IEnumerator temphealthUp()
-    {
-        float oldHealth = player.GetComponent<playerManager>().health;
+       
         player.GetComponent<playerManager>().resetHealth = 15f;
         player.GetComponent<playerManager>().health += 5f;
-        yield return new WaitForSeconds(25f);
-        player.GetComponent<playerManager>().resetHealth = 10f;
-         player.GetComponent<playerManager>().health = oldHealth;
+        if (player.GetComponent<playerManager>().health >= 15f) 
+        {
+            player.GetComponent<playerManager>().health = 15f;
+        }
         GameObject.Destroy(gameObject);
 
     }

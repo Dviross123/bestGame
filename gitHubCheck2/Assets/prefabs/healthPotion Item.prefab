@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 5322503845658111158, guid: 6749191d36ae520408bbbeeeb0aa092a, type: 3}
+  pickUpItem: 0
 --- !u!58 &9043668252239719014
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class audioPlayer : MonoBehaviour
     public AudioSource LoopSrc;
     public AudioSource NoLoopSrc;
 
-    public AudioClip dashSfx, runSfx, sword1, sword2, sword3, boom, bowStrech, bip;
+    public AudioClip dashSfx, runSfx, sword1, sword2, sword3, boom, bowStrech, bip, pickUpItem;
 
     public PlayerMovement playerMovement;
     public swordAttack swordAttack;
@@ -25,6 +25,7 @@ public class audioPlayer : MonoBehaviour
 
     private void Start()
     {
+
         messege = GameObject.Find("messege");
 
         if (messege == null)
@@ -80,6 +81,12 @@ public class audioPlayer : MonoBehaviour
         NoLoopSrc.Play();
     }
 
+    private void PickUpItem()
+    {
+        NoLoopSrc.clip = pickUpItem;
+        NoLoopSrc.Play();
+    }
+
     private void Run()
     {
         LoopSrc.clip = runSfx;
@@ -118,10 +125,6 @@ public class audioPlayer : MonoBehaviour
             canPlayOthers = true;
             stopLoopSrc();
         }       
-
-
-
-
 
         resetBipTimer = Random.Range(0.05f, .5f);
         bipTimer -= Time.deltaTime;

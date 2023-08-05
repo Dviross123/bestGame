@@ -338,7 +338,20 @@ public class playerManager: MonoBehaviour
         }
     }
 
-    
-        
+    public void returnNormalHealth() 
+    {
+        StartCoroutine(returnHealth());
+    }
+
+    private IEnumerator returnHealth()
+    {
+        float oldHealth = player.GetComponent<playerManager>().health;
+        yield return new WaitForSeconds(25f);
+        player.GetComponent<playerManager>().resetHealth = 10f;
+        player.GetComponent<playerManager>().health = oldHealth;
+    }
+
+
+
 
 }
