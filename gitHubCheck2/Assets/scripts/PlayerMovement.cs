@@ -220,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
         else if (!isWallJumping && !JumpSliding)
         {
             stopSpeed = 1f;
-            rb.velocity = new Vector2(horizontal * speed + extraMomentum * extraMomentumDirection, rb.velocity.y);
+            rb.velocity = new Vector2(horizontal * speed + extraMomentum * extraMomentumDirection + BouncingSpeed * BouncingDirection, rb.velocity.y);
         }
     }
 
