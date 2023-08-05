@@ -178,17 +178,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-        //lower momentum if moving to other direction
+        
         Momentum();
-
-        if (extraMomentumDirection == horizontal * -1 && extraMomentumDirection != 0 && extraMomentum > 0.1f)
-        {
-            if (extraMomentum > 24f)
-                extraMomentum = 24f;
-            extraMomentum -= 1f;
-        }
         //if is dashing do nothing
         if (isDashing)
         {
@@ -418,6 +409,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 extraMomentum -= 0.075f;
             }
+            //lower momentum if moving to other direction
+            if ((extraMomentumDirection < 0 && isFacingRight) || (extraMomentumDirection > 0 && !isFacingRight))
+            {
+                if (extraMomentum > 24f)
+                    extraMomentum = 24f;
+                extraMomentum -= 0.05f;
+            }
+            else
+                Debug.Log(isFacingRight + " " + extraMomentumDirection);
         }
     }
 
