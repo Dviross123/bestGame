@@ -262,10 +262,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalled() && !IsGrounded() && horizontal != 0f && !isDashing)
         {
             isWallSliding = true;
-            if (extraMomentum > 30)
-                rb.velocity = new Vector2(rb.velocity.x, wallSlidingSpeed * 24);
-            else
-                rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed * 3);
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed * 3);
         }
         else
         {
