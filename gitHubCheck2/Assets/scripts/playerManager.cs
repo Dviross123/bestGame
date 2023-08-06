@@ -351,10 +351,11 @@ public class playerManager: MonoBehaviour
         player.GetComponent<playerManager>().health = oldHealth;
     }
 
-
     public void takeDamage(float damage)
     {
         health -= damage;
     }
+
+
 
 }
