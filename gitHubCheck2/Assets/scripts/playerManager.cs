@@ -352,6 +352,9 @@ public class playerManager: MonoBehaviour
     }
 
 
-
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+    }
 
 }
