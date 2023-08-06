@@ -11,6 +11,7 @@ public class enemyAi : MonoBehaviour
     public float damage = 1;
     public float maxHealth = 8;
     public float health;
+    private bool canDamage = true;
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
@@ -35,7 +36,7 @@ public class enemyAi : MonoBehaviour
         player = GameObject.Find("Player");
         swordAttack = GameObject.Find("sword");
         bowAttack = GameObject.Find("bow");
-        
+
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +46,7 @@ public class enemyAi : MonoBehaviour
     }
     void UpdatePath()
     {
-        if(seeker.IsDone())
+        if (seeker.IsDone())
             seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
@@ -64,10 +65,10 @@ public class enemyAi : MonoBehaviour
         if (health <= 0)
             Destroy(gameObject);
 
-        if(path == null)
+        if (path == null)
             return;
 
-        if(currentWayPoint >= path.vectorPath.Count)
+        if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
@@ -84,7 +85,7 @@ public class enemyAi : MonoBehaviour
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
 
-        if(distance < nextWayPointDistance)
+        if (distance < nextWayPointDistance)
         {
             currentWayPoint++;
         }
@@ -110,8 +111,8 @@ public class enemyAi : MonoBehaviour
                 health -= 2;
             }
             else
-            { 
-                health--; 
+            {
+                health--;
             }
         }
     }
@@ -123,7 +124,7 @@ public class enemyAi : MonoBehaviour
             canDamage = false;
             StartCoroutine(DamageWait());
         }
-        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 ||swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage )
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 || swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage)
         {
             health--;
             canDamage = false;
