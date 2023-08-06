@@ -7,6 +7,7 @@ public class enemyAi : MonoBehaviour
 {
 
     public Transform target;
+    public bool canDamage = true;
 
     public float damage = 1;
     public float maxHealth = 8;
@@ -15,6 +16,7 @@ public class enemyAi : MonoBehaviour
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
+
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -35,6 +37,7 @@ public class enemyAi : MonoBehaviour
         player = GameObject.Find("Player");
         swordAttack = GameObject.Find("sword");
         bowAttack = GameObject.Find("bow");
+        
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -114,22 +117,27 @@ public class enemyAi : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("trigger");
-        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 )
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage )
         {
-            Debug.Log("b");
             health -= 2;
-          
+            canDamage = false;
+            StartCoroutine(DamageWait());
         }
         else if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && 
             (swordAttack.GetComponent<swordAttack>().attackNum == 1 ||
-            swordAttack.GetComponent<swordAttack>().attackNum == 2) )
+            swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage )
         {
-            
             health--;
-           
+            canDamage = false;
+            StartCoroutine(DamageWait());
         }
     }
+    private IEnumerator DamageWait()
+    {
+        yield return new WaitForSeconds(0.3f);
+        canDamage = true;
+    }
+
 }

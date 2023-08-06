@@ -18,6 +18,7 @@ TagManager:
   - smallSlimeNoKill
   - tempHeal
   - heal
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - wallLayer
   - EnemyLayer
-  - 
+  - playerLayer
   - 
   - 
   - 

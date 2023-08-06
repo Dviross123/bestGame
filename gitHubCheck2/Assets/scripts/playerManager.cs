@@ -310,6 +310,7 @@ public class playerManager: MonoBehaviour
             else if (!PlayerMovement.isDashing && !PlayerMovement.isFastFalling)
             {
                 health--;
+                healthBar.SetHealth(health, resetHealth);
             }
         }
 
@@ -351,7 +352,11 @@ public class playerManager: MonoBehaviour
         player.GetComponent<playerManager>().health = oldHealth;
     }
 
-
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+        healthBar.SetHealth(health, resetHealth);
+    }
 
 
 }
