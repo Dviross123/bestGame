@@ -12,7 +12,6 @@ public class enemyAi : MonoBehaviour
     public float damage = 1;
     public float maxHealth = 8;
     public float health;
-    private bool canDamage = true;
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
