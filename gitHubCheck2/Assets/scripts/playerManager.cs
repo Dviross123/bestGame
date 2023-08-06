@@ -82,106 +82,106 @@ public class playerManager: MonoBehaviour
         //animations
         //animations
 
-       
-        //run
-        if (Input.GetButton("Horizontal"))
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
+        if (!PauseMenu.isPaused) { 
+            //run
+            if (Input.GetButton("Horizontal"))
+            {
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+            }
 
-        //wall slide
-        if (PlayerMovement.isWallSliding)
-        {
-            animator.SetBool("isWallSliding", true);
-            animator.SetBool("isRunning", false);
-        }
-        else 
-        {
-            animator.SetBool("isWallSliding", false);
-        }
+            //wall slide
+            if (PlayerMovement.isWallSliding)
+            {
+                animator.SetBool("isWallSliding", true);
+                animator.SetBool("isRunning", false);
+            }
+            else 
+            {
+                animator.SetBool("isWallSliding", false);
+            }
 
-        //jump
-        if ((Input.GetButton("Jump") && rb.velocity.y>0) || Input.GetButton("Fire3") && rb.velocity.y > 0)
-        {
-            animator.SetBool("isJumping", true);
+            //jump
+            if ((Input.GetButton("Jump") && rb.velocity.y>0) || Input.GetButton("Fire3") && rb.velocity.y > 0)
+            {
+                animator.SetBool("isJumping", true);
 
-        }
-        if(PlayerMovement.IsGrounded()|| PlayerMovement.IsWalled()) 
-        {
-            animator.SetBool("isJumping", false);
-        }
+            }
+            if(PlayerMovement.IsGrounded()|| PlayerMovement.IsWalled()) 
+            {
+                animator.SetBool("isJumping", false);
+            }
 
-        //fall
-        if (rb.velocity.y < 0 && !PlayerMovement.IsGrounded() && !PlayerMovement.isWallSliding && !PlayerMovement.isJumping)
-        {
+            //fall
+            if (rb.velocity.y < 0 && !PlayerMovement.IsGrounded() && !PlayerMovement.isWallSliding && !PlayerMovement.isJumping)
+            {
             
-            animator.SetBool("isFalling", true);
-        }
-        else 
-        {
-            animator.SetBool("isFalling", false);
-        }
-        //slide
-        if (PlayerMovement.IsSliding && PlayerMovement.IsGrounded())
-        {
-            slideBC.enabled = true;
-            normalBC.enabled = false;
-            animator.SetBool("isSliding", true);
-        }
-        else 
-        {
-            slideBC.enabled = false;
-            normalBC.enabled = true;
-            animator.SetBool("isSliding", false);
-        }
+                animator.SetBool("isFalling", true);
+            }
+            else 
+            {
+                animator.SetBool("isFalling", false);
+            }
+            //slide
+            if (PlayerMovement.IsSliding && PlayerMovement.IsGrounded())
+            {
+                slideBC.enabled = true;
+                normalBC.enabled = false;
+                animator.SetBool("isSliding", true);
+            }
+            else 
+            {
+                slideBC.enabled = false;
+                normalBC.enabled = true;
+                animator.SetBool("isSliding", false);
+            }
 
-        //bowAttack
+            //bowAttack
 
-        if (bowAttack.isShooting)
-        {
-            animator.SetBool("isShooting", true);
-        }
-        else 
-        {
-            animator.SetBool("isShooting", false);
-        }
+            if (bowAttack.isShooting)
+            {
+                animator.SetBool("isShooting", true);
+            }
+            else 
+            {
+                animator.SetBool("isShooting", false);
+            }
 
-        //attack1
-        if (swordAttack.isAttacking && swordAttack.attackNum == 1)
-        {
-            animator.SetBool("isAttacking1", true);
-        }
-        else
-        {
-            animator.SetBool("isAttacking1", false);
-        }
+            //attack1
+            if (swordAttack.isAttacking && swordAttack.attackNum == 1)
+            {
+                animator.SetBool("isAttacking1", true);
+            }
+            else
+            {
+                animator.SetBool("isAttacking1", false);
+            }
 
-        //attack2
-        if (swordAttack.isAttacking && swordAttack.attackNum == 2)
-        {
-            animator.SetBool("isAttacking2", true);
-        }
-        else
-        {
+            //attack2
+            if (swordAttack.isAttacking && swordAttack.attackNum == 2)
+            {
+                animator.SetBool("isAttacking2", true);
+            }
+            else
+            {
 
-            animator.SetBool("isAttacking2", false);
-        }
+                animator.SetBool("isAttacking2", false);
+            }
 
-        //attack3
-        if (swordAttack.isAttacking && swordAttack.attackNum == 3)
-        {
-            animator.SetBool("isAttacking3", true);
-        }
-        else
-        {
+            //attack3
+            if (swordAttack.isAttacking && swordAttack.attackNum == 3)
+            {
+                animator.SetBool("isAttacking3", true);
+            }
+            else
+            {
 
-            animator.SetBool("isAttacking3", false);
+                animator.SetBool("isAttacking3", false);
+            }
         }
-
 
         if (transform.localPosition.y <= -90)
         {

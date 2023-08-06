@@ -57,84 +57,85 @@ public class bowAttack : MonoBehaviour
     }
     void Update()
     {
-        direction = shotPoint.position;
-        timer -= Time.deltaTime;
-        if (((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f)) && (launchForce < maxLauncForce))
-        {
-            StartCoroutine(BowStrechSfx());
-
-        }
-
-        shootingTimer -= Time.deltaTime;
-
-        if ((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f))
-        {
-
-            isShooting = true;
-            if (launchForce < maxLauncForce)
+        if (!PauseMenu.isPaused) { 
+            direction = shotPoint.position;
+            timer -= Time.deltaTime;
+            if (((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f)) && (launchForce < maxLauncForce))
             {
-                isMaxForce = false;
-                launchForce += Time.deltaTime * 14f;
+                StartCoroutine(BowStrechSfx());
+
             }
-            else
+
+            shootingTimer -= Time.deltaTime;
+
+            if ((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f))
             {
-                isMaxForce = true;
+
+                isShooting = true;
+                if (launchForce < maxLauncForce)
+                {
+                    isMaxForce = false;
+                    launchForce += Time.deltaTime * 14f;
+                }
+                else
+                {
+                    isMaxForce = true;
+                    shootingTimer = resetShootingTimer;
+                    Shoot();
+                    launchForce = 10f;
+
+                }
+            }
+            else if (Input.GetButtonUp("bow") && shootingTimer <= 0f)
+            {
                 shootingTimer = resetShootingTimer;
                 Shoot();
+                isShooting = false;
                 launchForce = 10f;
-
-            }
-        }
-        else if (Input.GetButtonUp("bow") && shootingTimer <= 0f)
-        {
-            shootingTimer = resetShootingTimer;
-            Shoot();
-            isShooting = false;
-            launchForce = 10f;
-        }
-        else
-        {
-            isShooting = false;
-        }
-
-        if (Input.GetButtonDown("bow") || Input.GetButton("bow"))
-        {
-            for (int i = 0; i < numberOfPoints; i++)
-            {
-                points[i].transform.position = PointPoisition(i * spaceBetweenPoint);
-            }
-
-        }
-        else 
-        {
-            for (int i = 0; i < numberOfPoints; i++)
-            {
-                points[i].transform.position = Vector2.zero;
-            }
-        }
-
-        void Shoot()
-        {
-
-            GameObject newArrow = Instantiate(arrow, shotPoint.position, Quaternion.identity);
-            Rigidbody2D arrowRigidbody = newArrow.GetComponent<Rigidbody2D>();
-
-            if (playerMovement.isFacingRight)
-            {
-                arrowRigidbody.velocity = transform.right * launchForce;
-                Vector3 scale = newArrow.transform.localScale;
-                scale.x = 1;
-                newArrow.transform.localScale = scale;
             }
             else
             {
-                arrowRigidbody.velocity = transform.right * -launchForce;
-                Vector3 scale = newArrow.transform.localScale;
-                scale.x = -1;
-                newArrow.transform.localScale = scale;
+                isShooting = false;
             }
 
+            if (Input.GetButtonDown("bow") || Input.GetButton("bow"))
+            {
+                for (int i = 0; i < numberOfPoints; i++)
+                {
+                    points[i].transform.position = PointPoisition(i * spaceBetweenPoint);
+                }
 
+            }
+            else 
+            {
+                for (int i = 0; i < numberOfPoints; i++)
+                {
+                    points[i].transform.position = Vector2.zero;
+                }
+            }
+
+            void Shoot()
+            {
+
+                GameObject newArrow = Instantiate(arrow, shotPoint.position, Quaternion.identity);
+                Rigidbody2D arrowRigidbody = newArrow.GetComponent<Rigidbody2D>();
+
+                if (playerMovement.isFacingRight)
+                {
+                    arrowRigidbody.velocity = transform.right * launchForce;
+                    Vector3 scale = newArrow.transform.localScale;
+                    scale.x = 1;
+                    newArrow.transform.localScale = scale;
+                }
+                else
+                {
+                    arrowRigidbody.velocity = transform.right * -launchForce;
+                    Vector3 scale = newArrow.transform.localScale;
+                    scale.x = -1;
+                    newArrow.transform.localScale = scale;
+                }
+
+            }
         }
 
         IEnumerator BowStrechSfx()

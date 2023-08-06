@@ -43,14 +43,16 @@ public class swordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attackNum > 3)
-        {
-            StartCoroutine(attackR());
-        }
-        //Debug.Log(attackNum);
-        if (Input.GetButtonDown("sword") && !isAttacking && canAttack)
-        {
-            StartCoroutine(attack());
+        if (!PauseMenu.isPaused) { 
+            if (attackNum > 3)
+            {
+                StartCoroutine(attackR());
+            }
+            //Debug.Log(attackNum);
+            if (Input.GetButtonDown("sword") && !isAttacking && canAttack)
+            {
+                StartCoroutine(attack());
+            }
         }
     }
     //coroutine not stopping when attacking in combo

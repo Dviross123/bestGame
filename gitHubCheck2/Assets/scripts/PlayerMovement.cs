@@ -76,102 +76,103 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (bowAttack.isShooting)
-        {
-            stopSpeed -= Time.deltaTime;
-        }
-        //resets extra momentum direction when the is no extra momentum
-        if (extraMomentum == 0)
-            extraMomentumDirection = transform.localScale.x;
-        //sets the max momentum to 40
-        if (extraMomentum > 40)
-            extraMomentum = 40;
-        //limits the slam storage to 1 time after momentum is higher than 20
-        if (extraMomentum < 20)
-            canSlamStorage = true;
-        //makes sure the momentum isnt negitive to negate possible errors (just to be safe)
-        if (extraMomentum < 0)
-            extraMomentum = 0;
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (horizontal > 0) horizontal = 1;
-        if (horizontal < 0) horizontal = -1;
-
-        //checks if you can jump
-        if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling)
-        {
-            isJumping = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
-            Jumps++;
-        }
-        else
-        {
-            isJumping = false;
-        }
-
-        //checks when you can dash
-        if (Input.GetButtonDown("Fire3") && canDash && gravityReturned && !isFastFalling && dashCounter > 0f)
-        {
-            StartCoroutine(Dash());
-        }
-
-        //gives back jump and dash when grounded
-        if (IsGrounded())
-        {
-            Jumps = 0;
-            canDash = true;
-            if (dashCounter < 1f)
+        if (!PauseMenu.isPaused) { 
+            if (bowAttack.isShooting)
             {
-                dashCounter++;
+                stopSpeed -= Time.deltaTime;
             }
-            wallJumpingAmount = 0f;
-            BouncingSpeed = 0f;
-        }
-        //always checks wall slide, jump and momentum
-        WallSlide();
-        WallJump();
-        //flips the player when nessecery
-        if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
-        {
-            Flip();
-        }
-
-
-        //fast fall
-        if (Input.GetButton("Fire2") && !isWallJumping && !isWallSliding && !IsGrounded() && canFastFall)
-        {
-            isFastFalling = true;
-            if (IsGrounded())
+            //resets extra momentum direction when the is no extra momentum
+            if (extraMomentum == 0)
+                extraMomentumDirection = transform.localScale.x;
+            //sets the max momentum to 40
+            if (extraMomentum > 40)
+                extraMomentum = 40;
+            //limits the slam storage to 1 time after momentum is higher than 20
+            if (extraMomentum < 20)
+                canSlamStorage = true;
+            //makes sure the momentum isnt negitive to negate possible errors (just to be safe)
+            if (extraMomentum < 0)
                 extraMomentum = 0;
-        }
-        //cancel fast fall
-        if ((Input.GetButtonUp("Fire2") || IsGrounded()) && isFastFalling)
-        {
-            isFastFalling = false;
-        }
-        //sliding
-        if (Input.GetButtonDown("Fire2") && IsGrounded())
-        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (horizontal > 0) horizontal = 1;
+            if (horizontal < 0) horizontal = -1;
 
-            preVel = rb.velocity.x;
-            preVel = Mathf.Abs(preVel);
-            IsSliding = true;
-            slidingDirection = transform.localScale.x;
-            StartCoroutine(StopSliding());
-        }
-        //cancel slide
-        if ((Input.GetButtonUp("Fire2") || !IsGrounded() || isJumpSliding) && IsSliding)
-        {
-            IsSliding = false;
-            wasSliding = true;
-        }
-        if (IsSliding && Input.GetButtonDown("Jump"))
-        {
-            IsSliding = false;
-            isJumpSliding = true;
-            canFastFall = false;
-            JumpSliding = true;
-            StartCoroutine(JumpSlide());
+            //checks if you can jump
+            if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling)
+            {
+                isJumping = true;
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
+                Jumps++;
+            }
+            else
+            {
+                isJumping = false;
+            }
+
+            //checks when you can dash
+            if (Input.GetButtonDown("Fire3") && canDash && gravityReturned && !isFastFalling && dashCounter > 0f)
+            {
+                StartCoroutine(Dash());
+            }
+
+            //gives back jump and dash when grounded
+            if (IsGrounded())
+            {
+                Jumps = 0;
+                canDash = true;
+                if (dashCounter < 1f)
+                {
+                    dashCounter++;
+                }
+                wallJumpingAmount = 0f;
+                BouncingSpeed = 0f;
+            }
+            //always checks wall slide, jump and momentum
+            WallSlide();
+            WallJump();
+            //flips the player when nessecery
+            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
+            {
+                Flip();
+            }
+
+
+            //fast fall
+            if (Input.GetButton("Fire2") && !isWallJumping && !isWallSliding && !IsGrounded() && canFastFall)
+            {
+                isFastFalling = true;
+                if (IsGrounded())
+                    extraMomentum = 0;
+            }
+            //cancel fast fall
+            if ((Input.GetButtonUp("Fire2") || IsGrounded()) && isFastFalling)
+            {
+                isFastFalling = false;
+            }
+            //sliding
+            if (Input.GetButtonDown("Fire2") && IsGrounded())
+            {
+
+                preVel = rb.velocity.x;
+                preVel = Mathf.Abs(preVel);
+                IsSliding = true;
+                slidingDirection = transform.localScale.x;
+                StartCoroutine(StopSliding());
+            }
+            //cancel slide
+            if ((Input.GetButtonUp("Fire2") || !IsGrounded() || isJumpSliding) && IsSliding)
+            {
+                IsSliding = false;
+                wasSliding = true;
+            }
+            if (IsSliding && Input.GetButtonDown("Jump"))
+            {
+                IsSliding = false;
+                isJumpSliding = true;
+                canFastFall = false;
+                JumpSliding = true;
+                StartCoroutine(JumpSlide());
+            }
         }
 
     }
