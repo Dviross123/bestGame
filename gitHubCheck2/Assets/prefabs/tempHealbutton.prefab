@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7520432791549451682}
         m_TargetAssemblyTypeName: healTemp, Assembly-CSharp
-        m_MethodName: healthUp
+        m_MethodName: healUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeOfHeal: 10
