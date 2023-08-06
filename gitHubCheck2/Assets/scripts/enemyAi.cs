@@ -7,7 +7,6 @@ public class enemyAi : MonoBehaviour
 {
 
     public Transform target;
-    public bool canDamage = true;
 
     public float damage = 1;
     public float maxHealth = 8;
