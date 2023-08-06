@@ -12,7 +12,7 @@ public class enemyAi : MonoBehaviour
     public float damage = 1;
     public float maxHealth = 8;
     public float health;
-
+    private bool canDamage = true;
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
@@ -119,15 +119,13 @@ public class enemyAi : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage )
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
         {
             health -= 2;
             canDamage = false;
             StartCoroutine(DamageWait());
         }
-        else if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && 
-            (swordAttack.GetComponent<swordAttack>().attackNum == 1 ||
-            swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage )
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 ||swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage )
         {
             health--;
             canDamage = false;
@@ -139,5 +137,4 @@ public class enemyAi : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         canDamage = true;
     }
-
 }

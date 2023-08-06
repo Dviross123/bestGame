@@ -62,19 +62,22 @@ public class killStrrongRobot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
         {
-            Debug.Log("swordBig");
             robotHealth -= 2;
             canDamage = false;
+            StartCoroutine(DamageWait());
         }
         else if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && canDamage)
         {
-            Debug.Log("sword");
             robotHealth--;
             canDamage = false;
+            StartCoroutine(DamageWait());
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+
+    private IEnumerator DamageWait()
     {
+        yield return new WaitForSeconds(0.3f);
         canDamage = true;
     }
 }
