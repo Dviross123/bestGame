@@ -12,7 +12,6 @@ public class enemyAi : MonoBehaviour
     public float damage = 1;
     public float maxHealth = 8;
     public float health;
-    private bool canDamage = true;
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
@@ -92,11 +91,11 @@ public class enemyAi : MonoBehaviour
         }
         if (force.x >= 0.01f)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else if (force.x <= -0.01f)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
