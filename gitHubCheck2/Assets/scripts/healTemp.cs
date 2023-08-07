@@ -6,8 +6,9 @@ public class healTemp : MonoBehaviour
 {
     private GameObject player;
     private GameObject healthBar;
-    public float timeOfHeal = 3f;
+    public static float oldHealth;
     private bool canHeal = true;
+    public playerManager playerManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +24,18 @@ public class healTemp : MonoBehaviour
     {
         if (canHeal)
         {
-            StartCoroutine(temphealthUp());
-
+            temphealthUp();
         }
 
     }
-    private IEnumerator temphealthUp()
+    private void temphealthUp()
     {
         canHeal = false;
+        oldHealth = player.GetComponent<playerManager>().health;
         player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth + 5;
         healthBar.GetComponent<healthBar>().SetHealth(player.GetComponent<playerManager>().health, player.GetComponent<playerManager>().resetHealth);
-        yield return new WaitForSeconds(timeOfHeal);
-        player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth;
-        healthBar.GetComponent<healthBar>().SetHealth(player.GetComponent<playerManager>().health, player.GetComponent<playerManager>().resetHealth);
+        player.GetComponent<playerManager>().STP();
+
         GameObject.Destroy(gameObject);
 
     }
