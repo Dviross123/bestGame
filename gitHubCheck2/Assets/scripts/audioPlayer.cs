@@ -7,7 +7,7 @@ public class audioPlayer : MonoBehaviour
     public AudioSource LoopSrc;
     public AudioSource NoLoopSrc;
 
-    public AudioClip dashSfx, runSfx, sword1, sword2, sword3, boom, bowStrech, bip, pickUpItem;
+    public AudioClip dashSfx, runSfx, sword1, sword2, sword3, boom, bowStrech, bip, pickUpItemSound;
 
     public PlayerMovement playerMovement;
     public swordAttack swordAttack;
@@ -16,6 +16,7 @@ public class audioPlayer : MonoBehaviour
 
     private firstLetterAppear firstLetterAppear;
     private GameObject messege;
+
 
     private bool playDashSound = true;
     public bool playRunSound = true;
@@ -26,8 +27,6 @@ public class audioPlayer : MonoBehaviour
 
     private void Start()
     {
-
-        messege = GameObject.Find("messege");
 
         if (messege == null)
         {
@@ -82,11 +81,7 @@ public class audioPlayer : MonoBehaviour
         NoLoopSrc.Play();
     }
 
-    private void PickUpItem()
-    {
-        NoLoopSrc.clip = pickUpItem;
-        NoLoopSrc.Play();
-    }
+
 
     private void Run()
     {
@@ -107,14 +102,16 @@ public class audioPlayer : MonoBehaviour
 
     }
 
+    public void PickUpItemSFX()
+    {
+        NoLoopSrc.clip = pickUpItemSound;
+        NoLoopSrc.Play();
+    }
+
 
     private void Update()
     {
-        if (pickUp.pickUpItem) 
-        {
-            PickUpItem();
-            pickUp.pickUpItem = false;
-        }
+
 
         if (firstLetterAppear != null && firstLetterAppear.inTrigger)
         {

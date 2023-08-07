@@ -295,6 +295,20 @@ public class playerManager: MonoBehaviour
 
 
     }
+
+    public void STP()
+    {
+        StartCoroutine(tempPotionEffectEnd());
+    }
+
+    private IEnumerator tempPotionEffectEnd()
+    {
+        
+        yield return new WaitForSeconds(25f);
+        health = healTemp.oldHealth;
+        healthBar.GetComponent<healthBar>().SetHealth(health, resetHealth);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
 

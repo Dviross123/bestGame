@@ -27857,7 +27857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9013259911111720630, guid: 29e949302a9129d459f2c97e70dfd3df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9013259911111720632, guid: 29e949302a9129d459f2c97e70dfd3df, type: 3}
       propertyPath: points.Array.data[0]
@@ -28403,10 +28403,11 @@ MonoBehaviour:
   boom: {fileID: 8300000, guid: 9d11c407c8c7ad747845161ff06aaad7, type: 3}
   bowStrech: {fileID: 8300000, guid: 934b8864cca34724a91f8329f2304690, type: 3}
   bip: {fileID: 8300000, guid: 6959dca6770d6a64b8b13bd02618f943, type: 3}
-  pickUpItem: {fileID: 0}
+  pickUpItemSound: {fileID: 0}
   playerMovement: {fileID: 1775235229}
   swordAttack: {fileID: 1340338523}
   bowAttack: {fileID: 893206722}
+  pickUp: {fileID: 0}
   playRunSound: 1
 --- !u!4 &1365037878
 Transform:
