@@ -12,6 +12,7 @@ public class audioPlayer : MonoBehaviour
     public PlayerMovement playerMovement;
     public swordAttack swordAttack;
     public bowAttack bowAttack;
+    public pickUp pickUp;
 
     private firstLetterAppear firstLetterAppear;
     private GameObject messege;
@@ -109,7 +110,11 @@ public class audioPlayer : MonoBehaviour
 
     private void Update()
     {
-
+        if (pickUp.pickUpItem) 
+        {
+            PickUpItem();
+            pickUp.pickUpItem = false;
+        }
 
         if (firstLetterAppear != null && firstLetterAppear.inTrigger)
         {
