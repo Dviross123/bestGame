@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7520432791549451682}
   m_Layer: 5
   m_Name: tempHealbutton
-  m_TagString: Untagged
+  m_TagString: tempHeal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfHeal: 10
+  playerManager: {fileID: 0}
