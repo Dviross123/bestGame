@@ -11,9 +11,6 @@ public class slot : MonoBehaviour
     public int index;
     public bool isDroppingItem = false;
 
-    public heal heal;
-    public healTemp healTemp;
-
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<inventory>();
@@ -39,7 +36,7 @@ public class slot : MonoBehaviour
 
     public void dropItem(GameObject slot)
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in slot.transform)
         {
             child.GetComponent<spawn>().SpawnItem();
             GameObject.Destroy(child.gameObject);
@@ -49,17 +46,15 @@ public class slot : MonoBehaviour
 
     public void useItem(GameObject slot)
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in slot.transform)
         {
             if (child.CompareTag("heal"))
             {
-                heal.HealPlayer();
-                GameObject.Destroy(child.gameObject);
+                slot.GetComponentInChildren<heal>().HealPlayer();
             }
             else if (child.CompareTag("tempHeal"))
             {
-                healTemp.healUp();
-                GameObject.Destroy(child.gameObject);
+                slot.GetComponentInChildren<healTemp>().healUp();
             }
 
         }

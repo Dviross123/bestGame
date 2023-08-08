@@ -26,4 +26,5 @@ public class heal : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
+
 }

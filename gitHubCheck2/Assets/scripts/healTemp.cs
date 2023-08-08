@@ -38,7 +38,6 @@ public class healTemp : MonoBehaviour
         player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth + 5;
         healthBar.GetComponent<healthBar>().SetHealth(player.GetComponent<playerManager>().health, player.GetComponent<playerManager>().resetHealth);
         player.GetComponent<playerManager>().STP();
-
         GameObject.Destroy(gameObject);
 
     }
