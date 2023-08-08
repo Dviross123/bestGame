@@ -39,7 +39,7 @@ public class slot : MonoBehaviour
 
     public void dropItem(GameObject slot)
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in slot.transform)
         {
             child.GetComponent<spawn>().SpawnItem();
             GameObject.Destroy(child.gameObject);
@@ -49,15 +49,17 @@ public class slot : MonoBehaviour
 
     public void useItem(GameObject slot)
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in slot.transform)
         {
             if (child.CompareTag("heal"))
             {
+                Debug.Log("use heal potion");
                 heal.HealPlayer();
                 GameObject.Destroy(child.gameObject);
             }
             else if (child.CompareTag("tempHeal"))
             {
+                Debug.Log("heal potion");
                 healTemp.healUp();
                 GameObject.Destroy(child.gameObject);
             }

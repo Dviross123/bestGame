@@ -72,7 +72,8 @@ public class gameManager : MonoBehaviour
 
         if (Input.GetButtonDown("dropItem")) 
         {
-            
+            Debug.Log("the slot is" + slotSelected);
+
             slot.dropItem(inventory.slots[slotSelected]);
         }
 
