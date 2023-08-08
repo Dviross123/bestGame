@@ -15,7 +15,7 @@ public class bpadScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && playerMovement.GetComponent<PlayerMovement>().IsGrounded() && !playerMovement.GetComponent<PlayerMovement>().IsWalled())
         {
-            playerMovement.GetComponent<PlayerMovement>().GetComponent<PlayerMovement>().rb.velocity = new Vector2(playerMovement.GetComponent<PlayerMovement>().rb.velocity.x, 20f);
+            playerMovement.GetComponent<PlayerMovement>().rb.velocity = new Vector2(playerMovement.GetComponent<PlayerMovement>().rb.velocity.x, 20f);
         }
         else if (collision.gameObject.tag == "Player" && playerMovement.GetComponent<PlayerMovement>().IsWalled())
         {
