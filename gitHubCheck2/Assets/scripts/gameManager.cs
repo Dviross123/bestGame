@@ -23,29 +23,22 @@ public class gameManager : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            
             slotSelected = 0;
-            
             slot1.transform.localScale = new Vector3(scaleseSize, scaleseSize, scaleseSize);
 
             slot2.transform.localScale = new Vector3(1, 1, 1);
             slot3.transform.localScale = new Vector3(1, 1, 1);
             slot4.transform.localScale = new Vector3(1, 1, 1);
-
-            Debug.Log("0");
         }
 
         if (Input.GetKeyDown("2"))
         {
             slotSelected = 1;
-
             slot2.transform.localScale = new Vector3(scaleseSize, scaleseSize, scaleseSize);
 
             slot1.transform.localScale = new Vector3(1, 1, 1);
             slot3.transform.localScale = new Vector3(1, 1, 1);
             slot4.transform.localScale = new Vector3(1, 1, 1);
-
-            Debug.Log("1");
         }
         if (Input.GetKeyDown("3"))
         {
@@ -55,8 +48,6 @@ public class gameManager : MonoBehaviour
             slot1.transform.localScale = new Vector3(1, 1, 1);
             slot2.transform.localScale = new Vector3(1, 1, 1);
             slot4.transform.localScale = new Vector3(1, 1, 1);
-
-            Debug.Log("2");
         }
         if (Input.GetKeyDown("4"))
         {
@@ -66,7 +57,6 @@ public class gameManager : MonoBehaviour
             slot1.transform.localScale = new Vector3(1, 1, 1);
             slot2.transform.localScale = new Vector3(1, 1, 1);
             slot3.transform.localScale = new Vector3(1, 1, 1);
-            Debug.Log("3");
         }
 
 
