@@ -6,8 +6,6 @@ using Pathfinding;
 public class enemyAi : MonoBehaviour
 {
 
-    public Transform target;
-
     private bool canDamage = true;
     public float damage = 1;
     public float maxHealth = 8;
@@ -47,7 +45,7 @@ public class enemyAi : MonoBehaviour
     void UpdatePath()
     {
         if (seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, player.GetComponent<Transform>().position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)

@@ -8,10 +8,13 @@ public class healthBar : MonoBehaviour
     public Color high;
     public Vector3 Offset;
 
+    void Start()
+    {
+        SetHealth(10f, 10f);
+    }
+
     public void SetHealth(float health, float maxHealth)
     {
-
-        Slider.gameObject.SetActive(health < maxHealth);
         Slider.value = health;
         Slider.maxValue = maxHealth;
 
