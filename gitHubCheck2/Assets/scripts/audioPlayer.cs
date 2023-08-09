@@ -12,7 +12,6 @@ public class audioPlayer : MonoBehaviour
     public PlayerMovement playerMovement;
     public swordAttack swordAttack;
     public bowAttack bowAttack;
-    public pickUp pickUp;
 
     private firstLetterAppear firstLetterAppear;
     private GameObject messege;

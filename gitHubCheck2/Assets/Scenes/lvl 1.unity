@@ -31687,11 +31687,10 @@ MonoBehaviour:
   boom: {fileID: 8300000, guid: 9d11c407c8c7ad747845161ff06aaad7, type: 3}
   bowStrech: {fileID: 8300000, guid: 934b8864cca34724a91f8329f2304690, type: 3}
   bip: {fileID: 8300000, guid: 6959dca6770d6a64b8b13bd02618f943, type: 3}
-  pickUpItemSound: {fileID: 0}
+  pickUpItemSound: {fileID: 8300000, guid: be085e76677e3a3489159e3d66965dc2, type: 3}
   playerMovement: {fileID: 1775235229}
   swordAttack: {fileID: 1340338523}
   bowAttack: {fileID: 893206722}
-  pickUp: {fileID: 0}
   playRunSound: 1
 --- !u!4 &1365037878
 Transform:
@@ -32298,6 +32297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9043668252239719015, guid: 195510e3a90e53d409ac86ad8d5dc643, type: 3}
+      propertyPath: NoLoopSrc
+      value: 
+      objectReference: {fileID: 1752562466}
     - target: {fileID: 9043668252239719017, guid: 195510e3a90e53d409ac86ad8d5dc643, type: 3}
       propertyPath: m_Name
       value: healthPotion Item
