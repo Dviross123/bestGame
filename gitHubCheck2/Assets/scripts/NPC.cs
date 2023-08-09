@@ -65,8 +65,8 @@ public class NPC : MonoBehaviour
     public void zeroText()
     {
         dialogueText.text = "";
-        dialoguePanel.SetActive(false);
         isTalking = false;
+        dialoguePanel.SetActive(false);
     }
 
     IEnumerator Typing()

@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             if (horizontal < 0) horizontal = -1;
 
             //checks if you can jump
-            if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling && !NPC.GetComponent<NPC>().isTalking)
+            if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling)
             {
                 isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
                 isFastFalling = false;
             }
             //sliding
-            if (Input.GetButtonDown("Fire2") && IsGrounded() && !NPC.GetComponent<NPC>().isTalking)
+            if (Input.GetButtonDown("Fire2") && IsGrounded() )
             {
 
                 preVel = rb.velocity.x;

@@ -59,7 +59,7 @@ public class bowAttack : MonoBehaviour
     }
     void Update()
     {
-        if (!PauseMenu.isPaused && !NPC.GetComponent<NPC>().isTalking) { 
+        if (!PauseMenu.isPaused) { 
             direction = shotPoint.position;
             timer -= Time.deltaTime;
             if (((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f)) && (launchForce < maxLauncForce))

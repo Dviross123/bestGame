@@ -51,7 +51,7 @@ public class swordAttack : MonoBehaviour
                 StartCoroutine(attackR());
             }
             //Debug.Log(attackNum);
-            if (Input.GetButtonDown("sword") && !isAttacking && canAttack && !NPC.GetComponent<NPC>().isTalking)
+            if (Input.GetButtonDown("sword") && !isAttacking && canAttack )
             {
                 StartCoroutine(attack());
             }

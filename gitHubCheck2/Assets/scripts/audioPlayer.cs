@@ -63,11 +63,11 @@ public class audioPlayer : MonoBehaviour
         NoLoopSrc.Play();
     }
 
-    private void Boom()
-    {
-        NoLoopSrc.clip = boom;
-        NoLoopSrc.Play();
-    }
+    //private void Boom()
+    //{
+    //    NoLoopSrc.clip = boom;
+    //    NoLoopSrc.Play();
+    //}
 
     private void BowStrech()
     {
@@ -91,6 +91,7 @@ public class audioPlayer : MonoBehaviour
 
     private void Bip()
     {
+        Debug.Log("bip");
         NoLoopSrc.clip = bip;
         NoLoopSrc.Play();
     }
@@ -147,11 +148,11 @@ public class audioPlayer : MonoBehaviour
 
         }
 
-        if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlayBoom && canPlayOthers)
-        {
+        //if (swordAttack.isAttacking && swordAttack.attackNum == 3 && swordAttack.canPlayBoom && canPlayOthers)
+        //{
 
-            Boom();
-        }
+        //    Boom();
+        //}
 
         if (bowAttack.canPlayStrech && canPlayOthers)
         {
