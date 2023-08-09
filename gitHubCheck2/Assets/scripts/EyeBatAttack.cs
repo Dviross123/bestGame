@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EyeBatAttack : MonoBehaviour
 {
-
     private bool isAttacking = false;
     private bool isKilling = false;
     private bool canAttack = false;
