@@ -25,7 +25,6 @@ public class bowAttack : MonoBehaviour
     GameObject[] points;
     public int numberOfPoints;
     public float spaceBetweenPoint;
-    private GameObject NPC;
 
     Vector2 direction;
 
@@ -33,7 +32,6 @@ public class bowAttack : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        NPC = GameObject.Find("Npc");
         points = new GameObject[numberOfPoints];
         for (int i = 0; i < numberOfPoints; i++)
         {
@@ -57,6 +55,7 @@ public class bowAttack : MonoBehaviour
             return position;
         }
     }
+
     void Update()
     {
         if (!PauseMenu.isPaused) { 
