@@ -25,6 +25,7 @@ public class bowAttack : MonoBehaviour
     GameObject[] points;
     public int numberOfPoints;
     public float spaceBetweenPoint;
+    private GameObject NPC;
 
     Vector2 direction;
 
@@ -32,6 +33,7 @@ public class bowAttack : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        NPC = GameObject.Find("Npc");
         points = new GameObject[numberOfPoints];
         for (int i = 0; i < numberOfPoints; i++)
         {
@@ -57,7 +59,7 @@ public class bowAttack : MonoBehaviour
     }
     void Update()
     {
-        if (!PauseMenu.isPaused) { 
+        if (!PauseMenu.isPaused && !NPC.GetComponent<NPC>().isTalking) { 
             direction = shotPoint.position;
             timer -= Time.deltaTime;
             if (((Input.GetButtonDown("bow") && shootingTimer <= 0f) || (Input.GetButton("bow") && shootingTimer <= 0f)) && (launchForce < maxLauncForce))

@@ -24486,11 +24486,15 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1927158378}
   dialogueText: {fileID: 1196034909}
   dialogue:
-  - lahav mor
-  - ido naim
+  - kill me
+  - 'please '
+  - 'skdjf '
+  - null
+  lastLine: 0
   continueButton: {fileID: 1661698667}
-  wordSpeed: 0.6
+  wordSpeed: 0.06
   playerIsClose: 0
+  isTalking: 0
 --- !u!1 &310379781
 GameObject:
   m_ObjectHideFlags: 0
@@ -31308,9 +31312,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3416908600737779341, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.999901
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908600737779341, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00003385544
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908600737779378, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3416908601211927910, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601310838472, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416908601310838472, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
@@ -34304,7 +34328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1927158379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34326,7 +34350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41.474, y: -327.17783}
+  m_AnchoredPosition: {x: 121, y: -292}
   m_SizeDelta: {x: -1216.857, y: -905.431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927158380
@@ -34342,7 +34366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

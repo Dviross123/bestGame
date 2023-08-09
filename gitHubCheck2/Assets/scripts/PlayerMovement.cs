@@ -66,11 +66,13 @@ public class PlayerMovement : MonoBehaviour
 
     public float stopSpeed = 1f;
 
+    private GameObject NPC;
 
     // Start is called before the first frame update
     void Start()
     {
         tr.emitting = false;
+        NPC = GameObject.Find("Npc");
     }
 
     // Update is called once per frame
@@ -98,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             if (horizontal < 0) horizontal = -1;
 
             //checks if you can jump
-            if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling)
+            if (Input.GetButtonDown("Jump") && Jumps < maxJumps && !isFastFalling && !NPC.GetComponent<NPC>().isTalking)
             {
                 isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
@@ -150,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
                 isFastFalling = false;
             }
             //sliding
-            if (Input.GetButtonDown("Fire2") && IsGrounded())
+            if (Input.GetButtonDown("Fire2") && IsGrounded() && !NPC.GetComponent<NPC>().isTalking)
             {
 
                 preVel = rb.velocity.x;

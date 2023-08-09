@@ -26,10 +26,12 @@ public class swordAttack : MonoBehaviour
     public GameObject lightningExp;
 
     public slot slot;
+    private GameObject NPC;
 
     // Start is called before the first frame update
     void Start()
     {
+        NPC = GameObject.Find("Npc");
         //lightningExp.SetActive(false);
         attackNum = 0;
         camera = GameObject.Find("MainCamera");
@@ -49,7 +51,7 @@ public class swordAttack : MonoBehaviour
                 StartCoroutine(attackR());
             }
             //Debug.Log(attackNum);
-            if (Input.GetButtonDown("sword") && !isAttacking && canAttack)
+            if (Input.GetButtonDown("sword") && !isAttacking && canAttack && !NPC.GetComponent<NPC>().isTalking)
             {
                 StartCoroutine(attack());
             }

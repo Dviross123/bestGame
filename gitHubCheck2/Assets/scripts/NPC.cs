@@ -9,43 +9,71 @@ public class NPC : MonoBehaviour
     public TextMeshProUGUI dialogueText; // Change to TextMeshProUGUI
     public string[] dialogue;
     private int index;
+    public int lastLine;
 
     public GameObject continueButton;
     public float wordSpeed;
     public bool playerIsClose;
+    public bool isTalking;
+
+
+    private void Start()
+    {
+        lastLine = dialogue.Length -1;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if (index < lastLine)
         {
-            if (dialoguePanel.activeInHierarchy)
+
+            if (!isTalking && playerIsClose)
             {
-                zeroText();
+                if (dialoguePanel.activeInHierarchy)
+                {
+                    zeroText();
+                }
+                else
+                {
+                    dialoguePanel.SetActive(true);
+                    StartCoroutine(Typing());
+
+                }
             }
-            else
+            if (dialogueText.text == dialogue[index])
             {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                continueButton.SetActive(true);
+                if (!Input.GetKeyDown(KeyCode.A))
+                {
+                    if (!Input.GetKeyDown(KeyCode.D))
+                    {
+                        if (Input.anyKeyDown)
+                        {
+                            NextLine();
+                        }
+                    }
+                }
             }
         }
-        if (dialogueText.text == dialogue[index])
+        else 
         {
-            continueButton.SetActive(true);
+            zeroText();
         }
     }
 
     public void zeroText()
     {
         dialogueText.text = "";
-        index = 0;
         dialoguePanel.SetActive(false);
+        isTalking = false;
     }
 
     IEnumerator Typing()
     {
         foreach (char letter in dialogue[index].ToCharArray())
         {
+            isTalking = true;
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
@@ -70,6 +98,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            index = 0;  
             playerIsClose = true;
         }
     }
