@@ -49,7 +49,6 @@ public class pickUp : MonoBehaviour
                 { // check whether the slot is EMPTY
                     
                     audioPlayer.PickUpItemSFX();
-                    ;
                     inventory.isFull[i] = true; // makes sure that the slot is now considered FULL
                     Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with i               
 
