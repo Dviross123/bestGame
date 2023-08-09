@@ -23,7 +23,7 @@ public class EyeBatAttack : MonoBehaviour
         isKilling = true;
         yield return new WaitForSeconds(0.1f);
         isKilling = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         //stop animation
         isAttacking = false;
     }   
