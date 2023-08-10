@@ -305,9 +305,16 @@ public class playerManager: MonoBehaviour
     private IEnumerator tempPotionEffectEnd()
     {
         isHealing = true;
-        yield return new WaitForSeconds(25f);
-        health = healTemp.oldHealth;
-        healthBar.GetComponent<healthBar>().SetHealth(health, resetHealth);
+        yield return new WaitForSeconds(15);
+        if(health < healTemp.oldHealth)
+        {
+       
+        }
+        else
+        {
+            health = healTemp.oldHealth;
+            healthBar.GetComponent<healthBar>().SetHealth(health, resetHealth);
+        }
         isHealing = false;
     }
 
