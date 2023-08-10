@@ -48,9 +48,18 @@ public class NPC : MonoBehaviour
                 {
                     if (!Input.GetKeyDown(KeyCode.D))
                     {
-                        if (Input.anyKeyDown)
+                        if (!Input.GetKeyDown(KeyCode.Space))
                         {
-                            NextLine();
+                            if (!Input.GetKeyDown(KeyCode.J))
+                            {
+                            if (!Input.GetKeyDown(KeyCode.K))
+                                {
+                                    if (Input.anyKeyDown)
+                                    {
+                                        NextLine();
+                                    }
+                                }
+                            }
                         }
                     }
                 }
