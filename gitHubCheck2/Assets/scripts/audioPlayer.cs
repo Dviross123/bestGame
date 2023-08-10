@@ -126,7 +126,7 @@ public class audioPlayer : MonoBehaviour
             stopLoopSrc();
         }       
 
-        resetBipTimer = Random.Range(0.05f, .5f);
+        resetBipTimer = Random.Range(0.05f, .2f);
         bipTimer -= Time.deltaTime;
 
         if (swordAttack.isAttacking && swordAttack.attackNum == 1 && swordAttack.canPlaySwordAttack1 && canPlayOthers)
@@ -150,6 +150,10 @@ public class audioPlayer : MonoBehaviour
 
         //    Boom();
         //}
+
+        
+
+
 
         if (bowAttack.canPlayStrech && canPlayOthers)
         {
