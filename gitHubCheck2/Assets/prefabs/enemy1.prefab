@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1014187553, guid: af3f0f792c88a6242916b0acba751ee3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 200
-  playerMovement: {fileID: 0}
   enemyWalkSpeed: 3
 --- !u!50 &2605363417858650946
 Rigidbody2D:

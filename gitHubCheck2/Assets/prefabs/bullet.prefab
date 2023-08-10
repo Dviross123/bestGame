@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  damage: 1
   bulletLifeTime: 10
-  Player: {fileID: 9069046769741291899, guid: aa77304706a7a354aa60d4ea5c4a4bcd, type: 3}
+  player: {fileID: 0}
 --- !u!58 &4917336694588926034
 CircleCollider2D:
   m_ObjectHideFlags: 0

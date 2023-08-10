@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EyeBatAttack : MonoBehaviour
 {
-
     private bool isAttacking = false;
     private bool isKilling = false;
     private bool canAttack = false;
@@ -23,7 +22,7 @@ public class EyeBatAttack : MonoBehaviour
         isKilling = true;
         yield return new WaitForSeconds(0.1f);
         isKilling = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         //stop animation
         isAttacking = false;
     }   

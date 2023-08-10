@@ -5,24 +5,24 @@ using UnityEngine;
 public class enemyshoot : MonoBehaviour
 {
 
-    public Transform player;
+    private GameObject player;
     public float shootingDis;
 
     private float timeBtwShots;
     public float startTimeBtwShots;
 
     public GameObject bullet;
-    public Transform playerTrans;
 
     void Start()
     {
         timeBtwShots = startTimeBtwShots;
+        player = GameObject.Find("Player");
     }
 
     
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position)<shootingDis) 
+        if (Vector2.Distance(transform.position, player.GetComponent<Transform>().position)<shootingDis) 
         {
         if (timeBtwShots <= 0)
         {
@@ -34,9 +34,9 @@ public class enemyshoot : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
         }
-        if(Mathf.Abs(playerTrans.position.x - transform.position.x) >= 1)
+        if(Mathf.Abs(player.GetComponent<Transform>().position.x - transform.position.x) >= 1)
         {
-            if (playerTrans.position.x < transform.position.x)
+            if (player.GetComponent<Transform>().position.x < transform.position.x)
             {
                 Vector3 localScale = transform.localScale;
                 localScale.x = -1f;
