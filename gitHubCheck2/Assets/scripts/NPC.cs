@@ -17,17 +17,40 @@ public class NPC : MonoBehaviour
     public bool isTalking;
 
 
+    private AudioSource src;
+
+    private float resetBipTimer;
+    private float bipTimer;
+
+
     private void Start()
     {
         lastLine = dialogue.Length -1;
+        src = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerIsClose)
-            isTalking = false;
 
+        if (isTalking)
+        {
+            if (bipTimer <= 0f)
+            {
+                Bip();
+                bipTimer = resetBipTimer;
+               
+            }
+        }
+        else
+        {
+            src.Stop();
+        }
+
+        if (!playerIsClose) 
+        {
+            isTalking = false;
+        }
         if (index < lastLine)
         {
 
@@ -93,6 +116,7 @@ public class NPC : MonoBehaviour
 
     public void NextLine()
     {
+        Bip();
         continueButton.SetActive(false);
         if (index < dialogue.Length - 1)
         {
@@ -121,5 +145,10 @@ public class NPC : MonoBehaviour
             playerIsClose = false;
             zeroText();
         }
+    }
+
+    private void Bip()
+    {
+        src.Play();
     }
 }

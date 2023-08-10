@@ -12,11 +12,13 @@ public class healTemp : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         healthBar = GameObject.Find("Player health Canvas");
+
     }
 
 
@@ -29,6 +31,8 @@ public class healTemp : MonoBehaviour
             temphealthUp();
         }
 
+        
+
     }
     private void temphealthUp()
     {
@@ -38,6 +42,5 @@ public class healTemp : MonoBehaviour
         healthBar.GetComponent<healthBar>().SetHealth(player.GetComponent<playerManager>().health, player.GetComponent<playerManager>().resetHealth);
         player.GetComponent<playerManager>().STP();
         GameObject.Destroy(gameObject);
-
     }
 }
