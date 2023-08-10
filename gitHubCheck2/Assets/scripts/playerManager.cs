@@ -42,6 +42,7 @@ public class playerManager: MonoBehaviour
     public bool startTimer=false;
     public bool killSmallSlime=false;
     public bool isKillingSlimeFF =false;
+    public bool isHealing = false;
 
 
     //floats
@@ -303,10 +304,11 @@ public class playerManager: MonoBehaviour
 
     private IEnumerator tempPotionEffectEnd()
     {
-        
+        isHealing = true;
         yield return new WaitForSeconds(25f);
         health = healTemp.oldHealth;
         healthBar.GetComponent<healthBar>().SetHealth(health, resetHealth);
+        isHealing = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
