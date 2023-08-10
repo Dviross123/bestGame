@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!61 &8914660485967909421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfHeal: 20
+  playerManager: {fileID: 1801403427746026321, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
 --- !u!114 &7235843843089688914
 MonoBehaviour:
   m_ObjectHideFlags: 0
