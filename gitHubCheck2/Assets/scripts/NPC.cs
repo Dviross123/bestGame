@@ -25,6 +25,9 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!playerIsClose)
+            isTalking = false;
+
         if (index < lastLine)
         {
 

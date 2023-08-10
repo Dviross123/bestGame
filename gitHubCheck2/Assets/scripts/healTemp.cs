@@ -17,7 +17,6 @@ public class healTemp : MonoBehaviour
     {
         player = GameObject.Find("Player");
         healthBar = GameObject.Find("Player health Canvas");
-       
     }
 
 
@@ -25,7 +24,7 @@ public class healTemp : MonoBehaviour
     
     public void healUp()
     {
-        if (canHeal)
+        if (canHeal && !player.GetComponent<playerManager>().isHealing)
         {
             temphealthUp();
         }
