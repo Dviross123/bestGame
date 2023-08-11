@@ -20,6 +20,7 @@ TagManager:
   - heal
   - ground
   - coin
+  - Shop
   layers:
   - Default
   - TransparentFX
