@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySlimeScript : MonoBehaviour
 {
-    private float damage = 2;
+    [SerializeField] private float damage = 2;
     [SerializeField] private Rigidbody2D rbE;
     [SerializeField] private Transform checkGroundEnemy;
     [SerializeField] private Transform checkWallEnemy;
@@ -43,7 +43,7 @@ public class EnemySlimeScript : MonoBehaviour
         {
             rbE.velocity = new Vector2(enemyWalkSpeed * transform.localScale.x, rbE.velocity.y);
         }
-        else
+        else 
         {
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;

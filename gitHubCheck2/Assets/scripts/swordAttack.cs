@@ -9,6 +9,7 @@ public class swordAttack : MonoBehaviour
     public bool isAttacking = false;
     private bool wasAttacking = false;
     public bool isKilling = false;
+    public bool hitEnemy = false;
 
     //sword attacks bools
     public bool canPlaySwordAttack1 = false;
@@ -138,6 +139,24 @@ public class swordAttack : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         canAttack = true;
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("EnemyLayer"))
+        {
+            if (isKilling)
+            {
+                Debug.Log("gghhh");
+                hitEnemy = true;
+            }
+            else
+            {
+                hitEnemy = false;
+            }
+        }
+    }
+
+
 
 
 

@@ -181,7 +181,7 @@ MonoBehaviour:
   maxHealth: 8
   health: 0
   speed: 20000
-  nextWayPointDistance: 3
+  nextWayPointDistance: 1.2
   enemyGfx: {fileID: 1027379128412977901}
 --- !u!50 &1027379128412977890
 Rigidbody2D:

@@ -8,29 +8,40 @@ public class cameraShakescontroller : MonoBehaviour
     public PlayerMovement playerMovement ;
     public playerManager playerManager;
     public killSlime killSlime;
+    public swordAttack swordAttack;
 
-    // Start is called before the first frame update
+
     void Start()
     {
   
     }
-    //void Update()
-    //{
+    void Update()
+    {
 
-    //    if ((playerMovement.isDashing && !playerMovement.IsGrounded()) || playerMovement.IsSliding || playerMovement.isFastFalling)
-    //    {
-    //        animator.SetBool("playerDash", true);
+        if ((playerMovement.isDashing /*&& !playerMovement.IsGrounded()*/) || playerMovement.IsSliding )
+        {
+            Debug.Log("shake");
+            animator.SetBool("playerDash", true);
 
-    //    }
+        }
 
-    //    else
-    //    {
-    //        animator.SetBool("playerDash", false);
-    //    }
+        else
+        {
+            animator.SetBool("playerDash", false);
+        }
+
+        if (swordAttack.hitEnemy)
+        {
+            animator.SetBool("hitEnemy", true);
+        }
+        else 
+        {
+            animator.SetBool("hitEnemy", false);
+        }
 
 
 
 
-    //}
-    
+    }
+
 }
