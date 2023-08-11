@@ -417,19 +417,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "enemy" && isDashing)
-        {
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.layer == 3)
-        {
-            Jumps = 0;
-            canDash = true;
-            wallJumpingAmount = 0f;
-        }
-    }
-
 }
