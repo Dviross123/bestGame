@@ -189,7 +189,7 @@ public class playerManager: MonoBehaviour
             }
         }
 
-        if (transform.localPosition.y <= -90)
+        if (transform.localPosition.y <= -200)
         {
             SceneManager.LoadScene(respawn);
         }
