@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8173887799878333164}
   - component: {fileID: 1668819965807257595}
   m_Layer: 5
-  m_Name: healbutton5
+  m_Name: +5healButton
   m_TagString: heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 196.18, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5322503845658111154
 CanvasRenderer:
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8542caef41bb9cd4ea96a4163b27ca37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 742b751223933c040a2da7b4fc59f8d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
