@@ -17,6 +17,8 @@ public class ShopController : MonoBehaviour
     public GameObject Slot4;
     public GameObject cross4;
 
+    public GameObject canvasShopTrigger;
+    public GameObject canvasShop;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,14 +60,7 @@ public class ShopController : MonoBehaviour
     void StopTime()
     {
         ShopTrigger.SetActive(false);
-        Slot1.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot1.GetComponent<RectTransform>().anchoredPosition.x, 600f);
-        cross1.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross1.GetComponent<RectTransform>().anchoredPosition.x, 756f);
-        Slot2.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot2.GetComponent<RectTransform>().anchoredPosition.x, 600f);
-        cross2.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross2.GetComponent<RectTransform>().anchoredPosition.x, 756f);
-        Slot3.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot3.GetComponent<RectTransform>().anchoredPosition.x, 600f);
-        cross3.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross3.GetComponent<RectTransform>().anchoredPosition.x, 756f);
-        Slot4.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot4.GetComponent<RectTransform>().anchoredPosition.x, 600f);
-        cross4.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross4.GetComponent<RectTransform>().anchoredPosition.x, 756f);
+        
 
         // Repeat for other slots and crosses
         Time.timeScale = 0f;
@@ -74,14 +69,7 @@ public class ShopController : MonoBehaviour
     public void resume()
     {
         Time.timeScale = 1f;
-        Slot1.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot1.GetComponent<RectTransform>().anchoredPosition.x, -1005.1f);
-        cross1.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross1.GetComponent<RectTransform>().anchoredPosition.x, -852f);
-        Slot2.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot2.GetComponent<RectTransform>().anchoredPosition.x, -1005.1f);
-        cross2.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross2.GetComponent<RectTransform>().anchoredPosition.x, -852f);
-        Slot3.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot3.GetComponent<RectTransform>().anchoredPosition.x, -1005.1f);
-        cross3.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross3.GetComponent<RectTransform>().anchoredPosition.x, -852f);
-        Slot4.GetComponent<RectTransform>().anchoredPosition = new Vector2(Slot4.GetComponent<RectTransform>().anchoredPosition.x, -1005.1f);
-        cross4.GetComponent<RectTransform>().anchoredPosition = new Vector2(cross4.GetComponent<RectTransform>().anchoredPosition.x, -852f);
+        
         // Repeat for other slots and crosses
         Shop.SetActive(false);
         isShoped = false;
