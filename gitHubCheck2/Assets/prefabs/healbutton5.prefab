@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5322503845658111155}
   - component: {fileID: 5322503845658111152}
   - component: {fileID: -8173887799878333164}
-  - component: {fileID: 7520432791549451682}
+  - component: {fileID: 1668819965807257595}
   m_Layer: 5
-  m_Name: tempHealbutton
-  m_TagString: tempHeal
+  m_Name: healbutton5
+  m_TagString: heal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,15 +30,15 @@ RectTransform:
   m_GameObject: {fileID: 5322503845658111158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.7, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5322503845658111154
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3281b06beba6fce42b6c692aac7c7543, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8542caef41bb9cd4ea96a4163b27ca37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,25 +123,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7520432791549451682}
-        m_TargetAssemblyTypeName: healTemp, Assembly-CSharp
-        m_MethodName: healUp
+      - m_Target: {fileID: 1668819965807257595}
+        m_TargetAssemblyTypeName: heal5, Assembly-CSharp
+        m_MethodName: HealPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11500000, guid: 268c93ce3458a574eabe04abc19d56f7, type: 3}
-        m_TargetAssemblyTypeName: healTemp, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -159,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b0267c5041903468fb93ce3286aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 8914660485967909427, guid: aed77b3ed3dcdb141bc3f2f1277f7841, type: 3}
---- !u!114 &7520432791549451682
+  item: {fileID: 6965026608013104306, guid: 602d919c387f60445b6436adabac7f78, type: 3}
+--- !u!114 &1668819965807257595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +157,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5322503845658111158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba786acf334c504086cb4b32609d0cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 518f0443cd9c7b14baeb14096cb32d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 1801403427746026321, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
