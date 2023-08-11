@@ -56,6 +56,10 @@ public class slot : MonoBehaviour
             {
                 slot.GetComponentInChildren<healTemp>().healUp();
             }
+            else if (child.CompareTag("bigHeal")) 
+            {
+                slot.GetComponentInChildren<heal5>().HealPlayer5Health();
+            }
 
         }
     }

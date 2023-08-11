@@ -21,6 +21,7 @@ TagManager:
   - ground
   - coin
   - Shop
+  - bigHeal
   layers:
   - Default
   - TransparentFX

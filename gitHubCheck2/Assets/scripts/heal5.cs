@@ -17,11 +17,15 @@ public class heal5 : MonoBehaviour
     }
 
 
-    public void HealPlayer()
+    public void HealPlayer5Health()
     {
         if (player.GetComponent<playerManager>().health < player.GetComponent<playerManager>().resetHealth)
         {
             player.GetComponent<playerManager>().health+=5;
+            if (player.GetComponent<playerManager>().health > player.GetComponent<playerManager>().resetHealth) 
+            {
+                player.GetComponent<playerManager>().health = player.GetComponent<playerManager>().resetHealth;
+            }
             healthBar.GetComponent<healthBar>().SetHealth(player.GetComponent<playerManager>().health, player.GetComponent<playerManager>().resetHealth);
             GameObject.Destroy(gameObject);
         }
