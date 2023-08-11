@@ -16,6 +16,7 @@ public class killSlime : MonoBehaviour
     private BoxCollider2D box;
     private GameObject player;
     private bool killSmallSlime;
+    public GameObject coin;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class killSlime : MonoBehaviour
             animator.SetBool("slimeDie", true);
             StartCoroutine(waitForShakeEnd());
             slimeAnimator.SetBool("isDead", true);
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
         }
 
         if (collision.gameObject.CompareTag("Player"))
@@ -70,7 +72,7 @@ public class killSlime : MonoBehaviour
             animator.SetBool("slimeDie", true);
             StartCoroutine(waitForShakeEnd());
             slimeAnimator.SetBool("isDead", true);
-            
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
         }
        
 

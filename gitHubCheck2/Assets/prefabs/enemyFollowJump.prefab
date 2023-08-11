@@ -180,6 +180,7 @@ MonoBehaviour:
   damage: 1
   maxHealth: 8
   health: 0
+  coin: {fileID: 4249888111044176725, guid: 08eb69bad40a66f4ba2998a5db4d8b82, type: 3}
   speed: 20000
   nextWayPointDistance: 1.2
   enemyGfx: {fileID: 1027379128412977901}

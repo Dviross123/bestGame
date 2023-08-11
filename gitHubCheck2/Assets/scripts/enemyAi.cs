@@ -64,6 +64,8 @@ public class enemyAi : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(coin, gameObject.transform.position, Quaternion.identity);
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
         }
 
         if (path == null)

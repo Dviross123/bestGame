@@ -114,6 +114,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 200
   enemyWalkSpeed: 3
+  isJumping: 0
 --- !u!50 &2605363417858650946
 Rigidbody2D:
   serializedVersion: 4
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slimeDeath: 0
   smallSlimeExplode: 0
+  coin: {fileID: 4249888111044176725, guid: 08eb69bad40a66f4ba2998a5db4d8b82, type: 3}
 --- !u!95 &-3011239511372885293
 Animator:
   serializedVersion: 5
