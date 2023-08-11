@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
-    public bool isShoped = false;
+    public static bool isShoped = false;
     public bool cancelShop = false;
     public GameObject ShopTrigger;
     public GameObject Shop;

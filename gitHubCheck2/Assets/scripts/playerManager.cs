@@ -88,7 +88,7 @@ public class playerManager: MonoBehaviour
         //animations
         //animations
 
-        if (!PauseMenu.isPaused) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped) { 
             //run
             if (Input.GetButton("Horizontal"))
             {

@@ -20,7 +20,6 @@ public class cameraShakescontroller : MonoBehaviour
 
         if ((playerMovement.isDashing /*&& !playerMovement.IsGrounded()*/) || playerMovement.IsSliding )
         {
-            Debug.Log("shake");
             animator.SetBool("playerDash", true);
 
         }
