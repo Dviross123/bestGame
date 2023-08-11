@@ -6,6 +6,8 @@ public class ShopController : MonoBehaviour
 {
     public static bool isShoped = false;
     public bool cancelShop = false;
+    public GameObject canvasShopTrigger;
+    public GameObject canvasShop;
     public GameObject ShopTrigger;
     public GameObject Shop;
     public GameObject Slot1;
