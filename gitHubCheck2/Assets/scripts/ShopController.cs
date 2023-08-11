@@ -6,8 +6,8 @@ public class ShopController : MonoBehaviour
 {
     public static bool isShoped = false;
     public bool cancelShop = false;
-    public GameObject ShopTrigger;
-    public GameObject Shop;
+    public GameObject canvasShopTrigger;
+    public GameObject canvasShop;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +31,10 @@ public class ShopController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ShopTrigger.SetActive(true);
+            canvasShopTrigger.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Shop.SetActive(true);
+                canvasShop.SetActive(true);
                 isShoped = true;
                 StopTime();
             }
@@ -42,19 +42,19 @@ public class ShopController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        ShopTrigger.SetActive(false);
+        canvasShopTrigger.SetActive(false);
     }
 
 
     void StopTime()
     {
-        ShopTrigger.SetActive(false);
+        canvasShopTrigger.SetActive(false);
         Time.timeScale = 0f;
     }
     public void resume()
     {
         Time.timeScale = 1f;
-        Shop.SetActive(false);
+        canvasShop.SetActive(false);
         isShoped = false;
     }
     public IEnumerator noShop()
