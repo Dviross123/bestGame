@@ -88,7 +88,7 @@ public class playerManager: MonoBehaviour
         //animations
         //animations
 
-        if (!PauseMenu.isPaused) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped) { 
             //run
             if (Input.GetButton("Horizontal"))
             {
@@ -332,6 +332,10 @@ public class playerManager: MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, smallBoostPower);  
                 killSmallSlime = true;
             }
+            else
+            {
+                isKillingSlimeFF = false;
+            }
 
         }
         if (collision.gameObject.CompareTag("coin"))
@@ -348,8 +352,10 @@ public class playerManager: MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, smallBoostPower);
                 killSmallSlime = true;
             }
-
-
+            else
+            {
+                isKillingSlimeFF = false;
+            }
         }
     }
 

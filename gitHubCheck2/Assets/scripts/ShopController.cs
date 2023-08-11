@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
-    public bool isShoped = false;
+    public static bool isShoped = false;
     public bool cancelShop = false;
     public GameObject ShopTrigger;
     public GameObject Shop;
@@ -40,10 +40,10 @@ public class ShopController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ShopTrigger.SetActive(true);
+            canvasShopTrigger.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Shop.SetActive(true);
+                canvasShop.SetActive(true);
                 isShoped = true;
                 StopTime();
             }
@@ -51,7 +51,7 @@ public class ShopController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        ShopTrigger.SetActive(false);
+        canvasShopTrigger.SetActive(false);
     }
 
 

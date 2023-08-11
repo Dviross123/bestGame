@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isWallSliding;
     private float wallSlidingSpeed = 1f;
+    private bool canWallSL = true;
 
     private bool canSlamStorage;
 
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.isPaused) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped) { 
             if (bowAttack.isShooting)
             {
                 stopSpeed -= Time.deltaTime;
@@ -103,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
                 Jumps++;
+                StartCoroutine(canWallslide());
             }
             else
             {
@@ -226,6 +228,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private IEnumerator canWallslide()
+    {
+        canWallSL = false;
+        yield return new WaitForSeconds(0.2f);
+        canWallSL = true;
+    }
+
     public IEnumerator StopSliding()
     {
         yield return new WaitForSeconds(1f);
@@ -260,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallSlide()
     {
-        if (IsWalled() && !IsGrounded() && horizontal != 0f && !isDashing)
+        if (IsWalled() && !IsGrounded() && horizontal != 0f && !isDashing && canWallSL)
         {
             isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed * 3);

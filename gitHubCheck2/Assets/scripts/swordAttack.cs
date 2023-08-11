@@ -44,7 +44,7 @@ public class swordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.isPaused) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped) { 
             if (attackNum > 3)
             {
                 StartCoroutine(attackR());
