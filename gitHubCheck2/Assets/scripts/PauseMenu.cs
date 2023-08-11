@@ -8,11 +8,17 @@ public class PauseMenu : MonoBehaviour
 
     public static bool isPaused = false;
     public GameObject PauseMenuUI;
+    private GameObject Shop;
+    private void Start()
+    {
+        Shop = GameObject.Find("Shop");
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Shop.GetComponent<ShopController>().cancelShop)
         {
+            Debug.Log("e");
             if (isPaused)
             {
                 Resume();

@@ -10,6 +10,8 @@ public class playerManager: MonoBehaviour
     public GameObject player;
     public GameObject smallSlime;
     private GameObject camera;
+   
+   
 
     //rb
     [SerializeField] public Rigidbody2D rb;
@@ -43,7 +45,7 @@ public class playerManager: MonoBehaviour
     public bool killSmallSlime=false;
     public bool isKillingSlimeFF =false;
     public bool isHealing = false;
-
+   
 
     //floats
     public float tpTimer;
@@ -69,10 +71,12 @@ public class playerManager: MonoBehaviour
         healthBar.SetHealth( health, resetHealth);
         camera = GameObject.Find("MainCamera");
         shakeAnimator = camera.GetComponent<Animator>();
+        
     }
 
     void Update()
     {
+        
         //kill player 
         if (health <= 0f) 
         {
@@ -292,11 +296,9 @@ public class playerManager: MonoBehaviour
             Destroy(collision.gameObject);
 
         }
-
-        
-
-
     }
+
+
 
     public void STP()
     {
