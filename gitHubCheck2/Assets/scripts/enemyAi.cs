@@ -131,7 +131,7 @@ public class enemyAi : MonoBehaviour
     }
     private IEnumerator DamageWait()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.6f);
         canDamage = true;
     }
 }
