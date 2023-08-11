@@ -331,11 +331,6 @@ public class playerManager: MonoBehaviour
                 killSmallSlime = true;
             }
 
-            else if (!PlayerMovement.isDashing && !PlayerMovement.isFastFalling)
-            {
-                health--;
-                healthBar.SetHealth(health, resetHealth);
-            }
         }
         if (collision.gameObject.CompareTag("coin"))
         {

@@ -11,8 +11,9 @@ public class EnemySlimeScript : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     private GameObject playerMovement;
+    private bool canDamage = true;
     public float enemyWalkSpeed = 3f;
-    private bool isJumping;
+    public bool isJumping;
 
     private void Start()
     {
@@ -30,25 +31,36 @@ public class EnemySlimeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CanWalkForward())
+        if (CanWalkForward() && isJumping)
+        {
             isJumping = false;
-        if (isJumping)
-            return;
-        if (checkSameX() && checkAbove() && !isJumping)
+        }
+
+        if(!CanWalkForward() && !CanWalkForwardWall())
         {
             isJumping = true;
+        }
+
+        if (checkSameX() && checkAbove() && !isJumping)
+        {
             rbE.velocity = new Vector2(0f, 8f);
         }
+
         else if (CanWalkForward() && !CanWalkForwardWall())
         {
             rbE.velocity = new Vector2(enemyWalkSpeed * transform.localScale.x, rbE.velocity.y);
         }
-        else 
+        else if (!isJumping)
         {
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
             rbE.velocity = new Vector2(-2f * transform.localScale.x, rbE.velocity.y);
+        }
+
+        if (isJumping)
+        {
+            rbE.velocity = new Vector2(0f, rbE.velocity.y);
         }
     }
 
@@ -70,9 +82,17 @@ public class EnemySlimeScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && canDamage)
         {
             playerMovement.GetComponent<playerManager>().takeDamage(damage);
+            canDamage = false;
+            StartCoroutine(canDamageReset());
         }
+    }
+
+    private IEnumerator canDamageReset()
+    {
+        yield return new WaitForSeconds(1f);
+        canDamage = true;
     }
 }
