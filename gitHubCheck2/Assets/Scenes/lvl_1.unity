@@ -120032,6 +120032,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400321583914947251, guid: 90ebe3c56a89c464292d965f84c5670f, type: 3}
   m_PrefabInstance: {fileID: 786104567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &394774013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394774014}
+  m_Layer: 0
+  m_Name: checkForErez
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394774014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394774013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 112.370384, y: 8.8721285, z: 1.6591027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &396554809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125142,7 +125173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 35
-  itemButton: {fileID: 5322503845658111158, guid: cae9d8f9038d8f74a9d7d497cba57468, type: 3}
+  itemButton: {fileID: 5322503845658111158, guid: 97f526dcc819564448bf43d9c524c23c, type: 3}
 --- !u!114 &1305331148
 MonoBehaviour:
   m_ObjectHideFlags: 0
