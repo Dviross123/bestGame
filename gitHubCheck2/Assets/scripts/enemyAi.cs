@@ -13,7 +13,7 @@ public class enemyAi : MonoBehaviour
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
-
+    public GameObject coin;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -61,7 +61,10 @@ public class enemyAi : MonoBehaviour
     void FixedUpdate()
     {
         if (health <= 0)
+        {
             Destroy(gameObject);
+            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
+        }
 
         if (path == null)
             return;

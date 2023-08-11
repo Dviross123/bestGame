@@ -26,7 +26,7 @@ public class boulderGenerat : MonoBehaviour
     {
         canSpawn = false;
         Instantiate(boulder, gameObject.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6);
         canSpawn = true;
     }
 }

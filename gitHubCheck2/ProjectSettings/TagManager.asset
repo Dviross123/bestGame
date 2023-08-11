@@ -19,6 +19,7 @@ TagManager:
   - tempHeal
   - heal
   - ground
+  - coin
   layers:
   - Default
   - TransparentFX

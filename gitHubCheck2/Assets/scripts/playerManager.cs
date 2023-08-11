@@ -53,6 +53,7 @@ public class playerManager: MonoBehaviour
     public float jumpTime;
     public float jumpTimeReset;
     public float smallBoostPower;
+    public float money;
 
     //int
     public int respawn;
@@ -336,6 +337,11 @@ public class playerManager: MonoBehaviour
                 healthBar.SetHealth(health, resetHealth);
             }
         }
+        if (collision.gameObject.CompareTag("coin"))
+        {
+            money++;
+            Destroy(collision.gameObject);
+        }
 
         if (collision.gameObject.CompareTag("smallSlimeNoKill"))
         {
@@ -380,6 +386,5 @@ public class playerManager: MonoBehaviour
         health -= damage;
         healthBar.SetHealth(health, resetHealth);
     }
-
 
 }
