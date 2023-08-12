@@ -6,19 +6,10 @@ public class ShopController : MonoBehaviour
 {
     public static bool isShoped = false;
     public bool cancelShop = false;
-    public GameObject ShopTrigger;
-    public GameObject Shop;
-    public GameObject Slot1;
-    public GameObject cross1;
-    public GameObject Slot2;
-    public GameObject cross2;
-    public GameObject Slot3;
-    public GameObject cross3;
-    public GameObject Slot4;
-    public GameObject cross4;
 
     public GameObject canvasShopTrigger;
     public GameObject canvasShop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +50,7 @@ public class ShopController : MonoBehaviour
 
     void StopTime()
     {
-        ShopTrigger.SetActive(false);
+        canvasShopTrigger.SetActive(false);
         
 
         // Repeat for other slots and crosses
@@ -71,7 +62,7 @@ public class ShopController : MonoBehaviour
         Time.timeScale = 1f;
         
         // Repeat for other slots and crosses
-        Shop.SetActive(false);
+        canvasShop.SetActive(false);
         isShoped = false;
     }
     public IEnumerator noShop()
