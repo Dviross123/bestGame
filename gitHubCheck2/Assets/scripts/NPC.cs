@@ -63,6 +63,7 @@ public class NPC : MonoBehaviour
                 else
                 {
                     dialoguePanel.SetActive(true);
+                    Debug.Log("E");
                     StartCoroutine(Typing());
 
                 }
