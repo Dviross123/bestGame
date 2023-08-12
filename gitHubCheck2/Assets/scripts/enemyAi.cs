@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class enemyAi : MonoBehaviour
 {
 
+    private bool playerCanDamage = true;
     private bool canDamage = true;
     public float damage = 1;
     public float maxHealth = 8;
@@ -104,10 +105,6 @@ public class enemyAi : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            player.GetComponent<playerManager>().takeDamage(damage);
-        }
         if (collision.gameObject.CompareTag("arrow"))
         {
             if (bowAttack.GetComponent<bowAttack>().isMaxForce)
@@ -120,26 +117,42 @@ public class enemyAi : MonoBehaviour
             }
         }
     }
-   private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
+        if (collision.gameObject.CompareTag("Player") && canDamage)
         {
-            health -= 2;
+            player.GetComponent<playerManager>().takeDamage(damage);
             canDamage = false;
-            StartCoroutine(DamageWait());
-            
-        }
-        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 || swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage)
-        {
-            health--;
-            canDamage = false;
-            StartCoroutine(DamageWait());
+            StartCoroutine(damageWait());
         }
     }
-    private IEnumerator DamageWait()
+   private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && playerCanDamage)
+        {
+            health -= 2;
+            playerCanDamage = false;
+            StartCoroutine(playerDamageWait());
+            
+        }
+        if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 || swordAttack.GetComponent<swordAttack>().attackNum == 2) && playerCanDamage)
+        {
+            health--;
+            playerCanDamage = false;
+            StartCoroutine(playerDamageWait());
+        }
+    }
+    private IEnumerator playerDamageWait()
+    {
+        yield return new WaitForSeconds(0.6f);
+        playerCanDamage = true;
+    }
+    private IEnumerator damageWait()
     {
         yield return new WaitForSeconds(0.6f);
         canDamage = true;
     }
+
+
     
 }

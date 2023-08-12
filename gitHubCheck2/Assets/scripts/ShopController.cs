@@ -13,7 +13,7 @@ public class ShopController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -51,7 +51,6 @@ public class ShopController : MonoBehaviour
     void StopTime()
     {
         canvasShopTrigger.SetActive(false);
-        
 
         // Repeat for other slots and crosses
         Time.timeScale = 0f;
@@ -60,7 +59,7 @@ public class ShopController : MonoBehaviour
     public void resume()
     {
         Time.timeScale = 1f;
-        
+
         // Repeat for other slots and crosses
         canvasShop.SetActive(false);
         isShoped = false;
