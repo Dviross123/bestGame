@@ -63,9 +63,9 @@ public class enemyAi : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
-            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
-            Instantiate(coin, gameObject.transform.position, Quaternion.identity);
+            Instantiate(coin, new Vector2(gameObject.transform.position.x - 1, gameObject.transform.position.y), Quaternion.identity);
+            Instantiate(coin, new Vector2(gameObject.transform.position.x  + 1, gameObject.transform.position.y), Quaternion.identity);
+            Instantiate(coin, new Vector2(gameObject.transform.position.x + 2, gameObject.transform.position.y), Quaternion.identity);
         }
 
         if (path == null)
@@ -139,4 +139,5 @@ public class enemyAi : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         canDamage = true;
     }
+    
 }
