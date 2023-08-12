@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Events;
 
 public class enemyAi : MonoBehaviour
 {
@@ -119,13 +120,14 @@ public class enemyAi : MonoBehaviour
             }
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+   private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && swordAttack.GetComponent<swordAttack>().attackNum == 3 && canDamage)
         {
             health -= 2;
             canDamage = false;
             StartCoroutine(DamageWait());
+            
         }
         if (collision.gameObject.CompareTag("sword") && swordAttack.GetComponent<swordAttack>().isKilling && (swordAttack.GetComponent<swordAttack>().attackNum == 1 || swordAttack.GetComponent<swordAttack>().attackNum == 2) && canDamage)
         {
