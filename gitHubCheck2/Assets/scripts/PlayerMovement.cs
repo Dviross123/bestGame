@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private bool wasSliding = false;
 
     public bowAttack bowAttack;
+    public swordAttack swordAttack;
 
     public float stopSpeed = 1f;
 
@@ -133,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             WallSlide();
             WallJump();
             //flips the player when nessecery
-            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
+            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing && !swordAttack.isAttacking)
             {
                 Flip();
             }
