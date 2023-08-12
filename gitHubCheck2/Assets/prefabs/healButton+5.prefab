@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8173887799878333164}
   - component: {fileID: 1668819965807257595}
   m_Layer: 5
-  m_Name: +5healButton
+  m_Name: healButton+5
   m_TagString: bigHeal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1668819965807257595}
         m_TargetAssemblyTypeName: heal5, Assembly-CSharp
-        m_MethodName: HealPlayer
+        m_MethodName: HealPlayer5Health
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
