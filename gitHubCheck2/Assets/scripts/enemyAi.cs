@@ -9,9 +9,11 @@ public class enemyAi : MonoBehaviour
 
     private bool playerCanDamage = true;
     private bool canDamage = true;
+    private bool hit;
     public float damage = 1;
     public float maxHealth = 8;
     public float health;
+    [SerializeField] private float knockbackPower = 12;
     private GameObject player;
     private GameObject swordAttack;
     private GameObject bowAttack;
@@ -46,7 +48,7 @@ public class enemyAi : MonoBehaviour
     }
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() || !hit)
             seeker.StartPath(rb.position, player.GetComponent<Transform>().position, OnPathComplete);
     }
 
@@ -73,7 +75,7 @@ public class enemyAi : MonoBehaviour
         if (path == null)
             return;
 
-        if (currentWayPoint >= path.vectorPath.Count)
+        if (currentWayPoint >= path.vectorPath.Count /*|| hit == true*/)
         {
             reachedEndOfPath = true;
             return;
@@ -85,7 +87,6 @@ public class enemyAi : MonoBehaviour
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
-
         rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
@@ -132,6 +133,16 @@ public class enemyAi : MonoBehaviour
         {
             health -= 2;
             playerCanDamage = false;
+            if (player.GetComponent<PlayerMovement>().isFacingRight)
+            {
+
+                rb.velocity = new Vector2(knockbackPower * 3, 0f);
+            }
+            else
+            {
+                rb.velocity = new Vector2(knockbackPower * -3, 0f);
+            }
+            StartCoroutine(HitByPlayer());
             StartCoroutine(playerDamageWait());
             
         }
@@ -139,8 +150,25 @@ public class enemyAi : MonoBehaviour
         {
             health--;
             playerCanDamage = false;
+            if (player.GetComponent<PlayerMovement>().isFacingRight)
+            {
+
+                rb.velocity = new Vector2(knockbackPower * 2, 0f);
+            }
+            else
+            {
+                rb.velocity = new Vector2(knockbackPower * -2, 0f);
+            }
+            StartCoroutine(HitByPlayer());
+            reachedEndOfPath = false;
             StartCoroutine(playerDamageWait());
         }
+    }
+    private IEnumerator HitByPlayer()
+    {
+        hit = true;
+        yield return new WaitForSeconds(1f);
+        hit = false;
     }
     private IEnumerator playerDamageWait()
     {

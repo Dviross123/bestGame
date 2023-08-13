@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             WallSlide();
             WallJump();
             //flips the player when nessecery
-            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing && !swordAttack.isAttacking)
+            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
             {
                 Flip();
             }
