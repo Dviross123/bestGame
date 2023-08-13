@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
     private bool wasSliding = false;
 
     public bowAttack bowAttack;
-    public swordAttack swordAttack;
 
     public float stopSpeed = 1f;
 
