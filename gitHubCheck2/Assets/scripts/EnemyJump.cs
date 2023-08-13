@@ -9,6 +9,7 @@ public class EnemyJump : MonoBehaviour
     private float jumpingPower = 10f;
     public Rigidbody2D rb;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,10 @@ public class EnemyJump : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower + rb.velocity.y / 4);
         }
+       
+        
     }
+    
     public bool IsWalled()
     {
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
