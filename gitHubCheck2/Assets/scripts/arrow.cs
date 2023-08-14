@@ -23,7 +23,7 @@ public class arrow : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("yes");
-            player.transform.position = transform.position;
+            //player.transform.position = transform.position;
             Destroy(gameObject);
         }
     }

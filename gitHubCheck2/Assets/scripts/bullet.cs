@@ -5,8 +5,9 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed;
-
+    [SerializeField] private float knockBackPower = 700;
     public float damage = 1;
+    public float direction;
 
     private Transform playerTrans;
     private Vector2 target;
@@ -37,19 +38,19 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        if((transform.position.x - player.transform.position.x) > 0)
+        {
+            direction = -1;
+        }
+        else
+        {
+            direction = 1;
+        }
 
         bulletLifeTime -= Time.deltaTime;
         if (bulletLifeTime <= 0f)
         {
             Destroy(gameObject);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            player.GetComponent<playerManager>().takeDamage(damage);
         }
     }
 }
