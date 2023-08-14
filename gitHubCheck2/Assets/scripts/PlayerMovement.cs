@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float originalGravity;
     public bool canDash = true;
     public bool isDashing;
-    public float dashingPower = 20f;
+    public float dashingPower = 30f;
     private float dashingTime = 0.1f;
     private float dashingCooldown = 0.2f;
     private float extraMomentum;
