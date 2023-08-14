@@ -21,10 +21,10 @@ public class bowAttack : MonoBehaviour
     public bool isShooting;
     public bool isMaxForce;
     public bool canPlayStrech = false;
-    public GameObject point;
-    GameObject[] points;
-    public int numberOfPoints;
-    public float spaceBetweenPoint;
+    //public GameObject point;
+    //GameObject[] points;
+    //public int numberOfPoints;
+    //public float spaceBetweenPoint;
 
     Vector2 direction;
 
@@ -32,11 +32,11 @@ public class bowAttack : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        points = new GameObject[numberOfPoints];
-        for (int i = 0; i < numberOfPoints; i++)
-        {
-            points[i] = Instantiate(point, pointTrans.position, Quaternion.identity);
-        }
+        //points = new GameObject[numberOfPoints];
+        //for (int i = 0; i < numberOfPoints; i++)
+        //{
+        //    points[i] = Instantiate(point, pointTrans.position, Quaternion.identity);
+        //}
         launchForce = 10f;
         shootingTimer = 0f;
         isShooting = false;
@@ -99,21 +99,21 @@ public class bowAttack : MonoBehaviour
                 isShooting = false;
             }
 
-            if (Input.GetButtonDown("bow") || Input.GetButton("bow"))
-            {
-                for (int i = 0; i < numberOfPoints; i++)
-                {
-                    points[i].transform.position = PointPoisition(i * spaceBetweenPoint);
-                }
+            //if (Input.GetButtonDown("bow") || Input.GetButton("bow"))
+            //{
+            //    for (int i = 0; i < numberOfPoints; i++)
+            //    {
+            //        points[i].transform.position = PointPoisition(i * spaceBetweenPoint);
+            //    }
 
-            }
-            else 
-            {
-                for (int i = 0; i < numberOfPoints; i++)
-                {
-                    points[i].transform.position = Vector2.zero;
-                }
-            }
+            //}
+            //else 
+            //{
+            //    for (int i = 0; i < numberOfPoints; i++)
+            //    {
+            //        points[i].transform.position = Vector2.zero;
+            //    }
+            //}
 
             void Shoot()
             {
