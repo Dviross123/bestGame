@@ -75,7 +75,7 @@ public class enemyAi : MonoBehaviour
         if (path == null)
             return;
 
-        if (currentWayPoint >= path.vectorPath.Count /*|| hit == true*/)
+        if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
