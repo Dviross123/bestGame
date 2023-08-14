@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canDash = true;
     public bool isDashing;
     public float dashingPower = 20f;
-    private float dashingTime = 0.2f;
+    private float dashingTime = 0.1f;
     private float dashingCooldown = 0.2f;
     private float extraMomentum;
     private float extraMomentumDirection;
@@ -373,12 +373,22 @@ public class PlayerMovement : MonoBehaviour
         //when not wave dashing but dashing delete momentum
         else if (hori == 0 || vert >= 0)
         {
-            rb.velocity = new Vector2(hori * dashingPower, vert * dashingPower);
+            if (hori != 0 && vert != 0)
+            {
+                rb.velocity = new Vector2(hori * (dashingPower - 10f), vert * (dashingPower - 10f));
+            }
+            else
+            {
+                rb.velocity = new Vector2(hori * dashingPower, vert * (dashingPower - 10f));
+            }
             extraMomentum = 0;
         }
         else
         {
-            rb.velocity = new Vector2(hori * dashingPower + hori * extraMomentum, vert * dashingPower);
+            if (hori != 0 && vert != 0)
+                rb.velocity = new Vector2(hori * (dashingPower - 10f) + hori * extraMomentum, vert * (dashingPower - 10f));
+            else
+                rb.velocity = new Vector2(hori * dashingPower + hori * extraMomentum, vert * (dashingPower - 10f));
             if (extraMomentum <= 6f)
                 extraMomentum = 22f;
             else
