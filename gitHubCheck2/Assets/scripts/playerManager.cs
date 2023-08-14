@@ -324,6 +324,8 @@ public class playerManager: MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+        
+
         if (collision.gameObject.CompareTag("smallSlime"))
         {
             if (PlayerMovement.isFastFalling  || (PlayerMovement.isDashing && Input.GetAxisRaw("Vertical") < 0f))

@@ -22,6 +22,7 @@ TagManager:
   - coin
   - Shop
   - bigHeal
+  - spike
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Shop.GetComponent<ShopController>().cancelShop)
+        if (Input.GetKeyDown(KeyCode.Escape) /*&& Shop.GetComponent<ShopController>().cancelShop*/)
         {
             Debug.Log("e");
             if (isPaused)

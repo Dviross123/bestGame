@@ -14,6 +14,9 @@ public class EnemySlimeScript : MonoBehaviour
     private bool canDamage = true;
     public float enemyWalkSpeed = 3f;
     public bool isJumping;
+    private bool checkJump = false;
+    [SerializeField] private bool ground;
+    [SerializeField] private bool wall;
 
     private void Start()
     {
@@ -31,21 +34,19 @@ public class EnemySlimeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CanWalkForward() && isJumping)
+        ground = CanWalkForward();
+        wall = CanWalkForwardWall();
+        if (CanWalkForward() && checkJump)
         {
             isJumping = false;
-        }
-
-        if(!CanWalkForward() && !CanWalkForwardWall())
-        {
-            isJumping = true;
         }
 
         if (checkSameX() && checkAbove() && !isJumping)
         {
             rbE.velocity = new Vector2(0f, 8f);
+            isJumping = true;
+            StartCoroutine(jumpWait());
         }
-
         else if (CanWalkForward() && !CanWalkForwardWall())
         {
             rbE.velocity = new Vector2(enemyWalkSpeed * transform.localScale.x, rbE.velocity.y);
@@ -88,6 +89,13 @@ public class EnemySlimeScript : MonoBehaviour
             canDamage = false;
             StartCoroutine(canDamageReset());
         }
+    }
+
+    private IEnumerator jumpWait()
+    {
+        checkJump = false;
+        yield return new WaitForSeconds(0.3f);
+        checkJump = true;
     }
 
     private IEnumerator canDamageReset()
