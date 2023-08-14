@@ -76,7 +76,7 @@ public class bowAttack : MonoBehaviour
                 if (launchForce < maxLauncForce)
                 {
                     isMaxForce = false;
-                    launchForce += Time.deltaTime * 500f;
+                    launchForce += Time.deltaTime * 50f;
                 }
                 else
                 {
