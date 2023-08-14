@@ -14,9 +14,9 @@ public class bowAttack : MonoBehaviour
     public float resetShootingTimer;
 
     public float launchForce;
-    public float maxLauncForce;
+    public float maxLauncForce = 500f;
     private float timer;
-    public float timerReset;
+    public float timerReset ;
 
     public bool isShooting;
     public bool isMaxForce;
@@ -46,12 +46,12 @@ public class bowAttack : MonoBehaviour
     {
         if (playerMovement.isFacingRight)
         {
-            Vector2 position = (Vector2)pointTrans.position + direction.normalized  * (launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
+            Vector2 position = (Vector2)pointTrans.position + direction.normalized  * (launchForce * t) + /*0.5f **/ Physics2D.gravity * (t/* * t*/);
             return position;
         }
         else
         {
-            Vector2 position = (Vector2)pointTrans.position + direction.normalized * -1 * (launchForce * t) + 0.5f * Physics2D.gravity * (t * t);
+            Vector2 position = (Vector2)pointTrans.position + direction.normalized * -1 * (launchForce * t) + /*0.5f **/ Physics2D.gravity * (t /** t*/);
             return position;
         }
     }
@@ -76,7 +76,7 @@ public class bowAttack : MonoBehaviour
                 if (launchForce < maxLauncForce)
                 {
                     isMaxForce = false;
-                    launchForce += Time.deltaTime * 14f;
+                    launchForce += Time.deltaTime * 500f;
                 }
                 else
                 {
