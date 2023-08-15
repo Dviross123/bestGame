@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallSlime: {fileID: 1314327277836953574, guid: 0970deef78186c34089149993866b78d, type: 3}
-  player: {fileID: 3014575997191909258, guid: 4bc75b44b5dd4ff4fb029e31bec5f1a1, type: 3}
+  rb: {fileID: -5638149025998861946}
 --- !u!50 &-5638149025998861946
 Rigidbody2D:
   serializedVersion: 4

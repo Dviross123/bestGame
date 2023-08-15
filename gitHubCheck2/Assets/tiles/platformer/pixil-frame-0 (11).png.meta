@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da994f95087abc041b93ba2a0a5c9f92
+guid: 5dbd061f8c9d01041ae50b0897be08be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (9)_0
+      name: pixil-frame-0 (11)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3924bbe8a69320468ce5dace5732ba0
-      internalID: 98545111
+      spriteID: b819c6db9bc81924a804e4b0b82a2dab
+      internalID: 1781374255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (9)_1
+      name: pixil-frame-0 (11)_1
       rect:
         serializedVersion: 2
         x: 128
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6353b26721d94b4489804a1cc2f537f
-      internalID: 961143785
+      spriteID: 2a2be79fa4256ad4ca9498261107fd17
+      internalID: -1675216771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (9)_2
+      name: pixil-frame-0 (11)_2
       rect:
         serializedVersion: 2
         x: 0
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432d0db122903be48b40c33785079faa
-      internalID: -1818001242
+      spriteID: 73670ae102b3f174f84408f93b3a0f7a
+      internalID: 30083667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (9)_3
+      name: pixil-frame-0 (11)_3
       rect:
         serializedVersion: 2
         x: 128
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6401a8d30b9178d4bbd99a06573310f6
-      internalID: 1521134604
+      spriteID: 6e0f4f0c306090d4c9d609183154af94
+      internalID: 1774742594
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pixil-frame-0 (9)_0: 98545111
-      pixil-frame-0 (9)_1: 961143785
-      pixil-frame-0 (9)_2: -1818001242
-      pixil-frame-0 (9)_3: 1521134604
+      pixil-frame-0 (11)_0: 1781374255
+      pixil-frame-0 (11)_1: -1675216771
+      pixil-frame-0 (11)_2: 30083667
+      pixil-frame-0 (11)_3: 1774742594
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

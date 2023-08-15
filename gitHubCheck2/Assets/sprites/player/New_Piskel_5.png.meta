@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f07052f354eba0e4283eeabbe2b94a05
+guid: 83d7735ae0f62a44394609d91ee49348
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-0 (8)_0
+      name: New_Piskel_5_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 128
-        height: 128
+        x: 8
+        y: 816
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 631fbd6186c3fd144a00e19f03f1fbad
-      internalID: 984090370
+      spriteID: 74dd4a8c97511c046a3223c0a016bdf0
+      internalID: -1891186266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (8)_1
+      name: New_Piskel_5_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
+        x: 264
+        y: 816
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f213ba62554472428201483e826c0cb
-      internalID: 1329440725
+      spriteID: fc38d904f1f3c474b8edf7d09b5defaf
+      internalID: -1222616190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (8)_2
+      name: New_Piskel_5_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 520
+        y: 816
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f87cc7f9f67cb45a6bfcf2f63261f5
-      internalID: 362656671
+      spriteID: 00f0bf079feeef0499437efafa483cd9
+      internalID: -1433071069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pixil-frame-0 (8)_3
+      name: New_Piskel_5_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
+        x: 8
+        y: 560
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2c3497920171814991b9938f979a2a9
-      internalID: -857905114
+      spriteID: b6f6455fe13e75c44b9c0f6f89cf7022
+      internalID: -1602917779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 560
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51883987ec073b48b20e10f56c848bb
+      internalID: -300205360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 560
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6545ffc841bd7d9478ebabe111d212a1
+      internalID: -151271408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 304
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7c6632cd79eed4f9d57fc7f212a990
+      internalID: -1697994319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_7
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 304
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a65693fca44754383c8a8e08d3e862
+      internalID: -1809488607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_8
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 304
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cdc41dc17ba3c49a9ff69894d1218b
+      internalID: 1298880332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 48
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0511602f4aae3e442b294b4deb1531fe
+      internalID: -369089248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_5_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 48
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8be58da42433648a2ad0c4027cc8b2
+      internalID: 608566679
       vertices: []
       indices: 
       edges: []
@@ -223,10 +370,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pixil-frame-0 (8)_0: 984090370
-      pixil-frame-0 (8)_1: 1329440725
-      pixil-frame-0 (8)_2: 362656671
-      pixil-frame-0 (8)_3: -857905114
+      New_Piskel_5_0: -1891186266
+      New_Piskel_5_1: -1222616190
+      New_Piskel_5_10: 608566679
+      New_Piskel_5_2: -1433071069
+      New_Piskel_5_3: -1602917779
+      New_Piskel_5_4: -300205360
+      New_Piskel_5_5: -151271408
+      New_Piskel_5_6: -1697994319
+      New_Piskel_5_7: -1809488607
+      New_Piskel_5_8: 1298880332
+      New_Piskel_5_9: -369089248
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

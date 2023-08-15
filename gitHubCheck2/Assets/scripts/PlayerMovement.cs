@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+   
 
 
     private float preVel = 0f;
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     private bool wasSliding = false;
 
     public bowAttack bowAttack;
+    public shotPointFlip shotPointFlip;
 
     public float stopSpeed = 1f;
 
@@ -77,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.isPaused && !ShopController.isShoped || gameObject.GetComponent<playerManager>().hit) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped || gameObject.GetComponent<playerManager>().hit)
+        {
             if (bowAttack.isShooting)
             {
                 stopSpeed -= Time.deltaTime;
@@ -133,8 +136,9 @@ public class PlayerMovement : MonoBehaviour
             WallSlide();
             WallJump();
             //flips the player when nessecery
-            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing )
+            if (!isWallJumping && !IsSliding && !isJumpSliding && !isDashing)
             {
+                
                 Flip();
             }
 
@@ -181,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
         Momentum();
         //if is dashing do nothing
         if (isDashing || gameObject.GetComponent<playerManager>().hit)
@@ -264,7 +268,7 @@ public class PlayerMovement : MonoBehaviour
     //checks when walled
     public bool IsWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer); 
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
     private void WallSlide()
@@ -334,6 +338,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
+            shotPointFlip.flip();
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
