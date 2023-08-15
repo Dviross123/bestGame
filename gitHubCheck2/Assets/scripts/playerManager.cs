@@ -45,7 +45,7 @@ public class playerManager: MonoBehaviour
     public bool killSmallSlime=false;
     public bool isKillingSlimeFF =false;
     public bool isHealing = false;
-   
+    public bool hit;
 
     //floats
     public float tpTimer;
@@ -56,6 +56,7 @@ public class playerManager: MonoBehaviour
     public float jumpTimeReset;
     public float smallBoostPower;
     public float money;
+    private float knockBackPower = 7f;
 
     //int
     public int respawn;
@@ -219,7 +220,8 @@ public class playerManager: MonoBehaviour
     {
         if (collision.CompareTag("Bullet")) 
         {
-            health--;
+            takeDamage(1f);
+            StartCoroutine(playerHit(collision.gameObject.GetComponent<bullet>().direction));
             healthBar.SetHealth(health, resetHealth);
             shakeAnimator.SetBool("robotShake", true);
             Destroy(collision.gameObject);
@@ -390,6 +392,15 @@ public class playerManager: MonoBehaviour
     {
         health -= damage;
         healthBar.SetHealth(health, resetHealth);
+    }
+
+    public IEnumerator playerHit(float direction)
+    {
+        hit = true;
+        Debug.Log("hit");
+        rb.velocity = new Vector2(direction * knockBackPower, knockBackPower);
+        yield return new WaitForSeconds(0.4f);
+        hit = false;
     }
 
 }

@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.isPaused && !ShopController.isShoped) { 
+        if (!PauseMenu.isPaused && !ShopController.isShoped || gameObject.GetComponent<playerManager>().hit) { 
             if (bowAttack.isShooting)
             {
                 stopSpeed -= Time.deltaTime;
@@ -184,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
         
         Momentum();
         //if is dashing do nothing
-        if (isDashing)
+        if (isDashing || gameObject.GetComponent<playerManager>().hit)
         {
             return;
         }

@@ -99,9 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  knockBackPower: 20
+  direction: 0
   damage: 1
   bulletLifeTime: 10
-  player: {fileID: 0}
+  player: {fileID: 1801403427746026331, guid: 33a170a05a4167a449d60aaaf0e7e6b7, type: 3}
 --- !u!58 &4917336694588926034
 CircleCollider2D:
   m_ObjectHideFlags: 0
