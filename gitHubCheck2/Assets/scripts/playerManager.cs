@@ -56,7 +56,7 @@ public class playerManager: MonoBehaviour
     public float jumpTimeReset;
     public float smallBoostPower;
     public float money;
-    private float knockBackPower = 7f;
+    [SerializeField] private float knockBackPower = 7f;
 
     //int
     public int respawn;

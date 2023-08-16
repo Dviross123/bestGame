@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpingPower = 16f;
     public bool isFacingRight = true;
     public bool isJumping;
-    private int Jumps = 0;
+    public int Jumps = 0;
     public int maxJumps = 1;
 
     public bool IsBouncing = false;
