@@ -320,6 +320,7 @@ public class PlayerMovement : MonoBehaviour
             if (canSlamStorage) extraMomentum = 0f;
             if (transform.localScale.x != wallJumpingDirection)
             {
+                shotPointFlip.flip();
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1f;

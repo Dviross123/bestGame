@@ -41,7 +41,7 @@ public class EnemySlimeScript : MonoBehaviour
             isJumping = false;
         }
 
-        if (checkSameX() && checkAbove() && !isJumping)
+        if (checkSameX() && checkAbove() && !isJumping && CanWalkForward())
         {
             rbE.velocity = new Vector2(0f, 8f);
             isJumping = true;
