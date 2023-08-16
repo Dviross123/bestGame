@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canDash = true;
     public bool isDashing;
     public float dashingPower = 30f;
-    private float dashingTime = 0.1f;
+    private float dashingTime = 0.25f;
     private float dashingCooldown = 0.2f;
     private float extraMomentum;
     private float extraMomentumDirection;
@@ -263,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
     //checks when grounded
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.3f, groundLayer);
     }
     //checks when walled
     public bool IsWalled()
@@ -310,6 +310,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0 && wallJumpingAmount < wallJumpingAllowed)
         {
+            shotPointFlip.flip();
             isWallJumping = true;
             Jumps = 0;
             wallJumpingAmount++;

@@ -99,6 +99,17 @@ public class playerManager: MonoBehaviour
             {
                 animator.SetBool("isRunning", false);
             }
+            // dash
+            if (PlayerMovement.isDashing)
+            {
+                animator.SetBool("isDashing", true);
+            }
+            else
+            {
+                animator.SetBool("isDashing", false);
+            }
+
+
 
             //wall slide
             if (PlayerMovement.isWallSliding)
